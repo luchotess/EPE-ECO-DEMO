@@ -1,0 +1,37 @@
+<table class="table table-totals">
+  <tbody>
+  <tr>
+    <td>Subtotal</td>
+    <td>{{ (totalPrice + totalDiscount) | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Costo de Envío</td>
+    <td>{{ getShippingCost(localShippingAddress.shippingMethod) | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Descuentos</td>
+    <td>- {{ totalDiscount | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Impuestos</td>
+    <td>Incluidos</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>Total</td>
+    <td>{{ totalPrice + getShippingCost(localShippingAddress.shippingMethod) | currency: 'S/ '}}</td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn btn-primary float-right" (click)="buyAttempt()" [disabled]="buying" *ngIf="!payed">
+        <span class="spinner-border" role="status" aria-hidden="true" *ngIf="buying"></span>
+        Comprar
+      </button>
+    </td>
+  </tr>
+  </tfoot>
+</table>

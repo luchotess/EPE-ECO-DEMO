@@ -1,0 +1,53 @@
+<div class="sidebar-wrapper">
+  <div class="widget">
+    <h3 class="widget-title">
+      <a data-toggle="collapse" href="#widget-body-2" role="button" aria-expanded="true"
+         aria-controls="widget-body-2">Categorias</a>
+    </h3>
+    <div class="collapse show" id="widget-body-2">
+      <div class="widget-body">
+        <ul class="cat-list">
+          <li>
+            <a class="strong">Productos</a>
+          </li>
+          <li *ngFor="let category of categories">
+            <a routerLink="/{{storeUrl}}/{{category.url ? category.url : category}}">
+              {{category.title ? category.title : category}}
+            </a>
+          </li>
+          <li *ngFor="let category of categoriesServices">
+            <a [class.strong]="!category.parentId" routerLink="/{{storeUrl}}/{{category.url}}">
+              {{category.title}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="widget" *ngIf="false">
+    <h3 class="widget-title">
+      <a data-toggle="collapse" href="#widget-body-3" role="button" aria-expanded="true"
+         aria-controls="widget-body-3">Precio</a>
+    </h3>
+
+    <div class="collapse show" id="widget-body-3">
+      <div class="widget-body">
+        <form action="#">
+          <div class="price-slider-wrapper">
+            <div id="price-slider"></div><!-- End #price-slider -->
+          </div><!-- End .price-slider-wrapper -->
+
+          <div class="filter-price-action d-flex align-items-center justify-content-between flex-wrap">
+            <button type="submit" class="btn btn-primary">Filtro</button>
+
+            <div class="filter-price-text">
+              Precio:
+              <span id="filter-price-range"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

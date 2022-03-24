@@ -1,0 +1,18 @@
+.sticky-header {
+  background-color: transparent !important;
+
+  &.fixed {
+    background-color: white !important;
+  }
+}
+
+.main-nav {
+  background-color: white;
+  padding: 0 0px;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+.top-notice small {
+  opacity: .8;
+}

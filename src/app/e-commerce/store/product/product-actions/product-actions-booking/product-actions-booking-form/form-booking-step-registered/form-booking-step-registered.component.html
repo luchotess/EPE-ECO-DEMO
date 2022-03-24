@@ -1,0 +1,9 @@
+<h4>
+  Paso 3 de 3. ¡Listo! Te hemos registrado. Tu código de referencia es
+  <b>{{ bookingData.referenceCode.toUpperCase() }}</b>.
+</h4>
+<h5>
+  En breve nos contactaremos contigo a tu correo: "<strong>{{(user | async).email}}</strong>" o al
+  telefóno: "<strong>{{(user | async).phone}}</strong>" para confirmar tu horario y la forma de pago.
+</h5>
+<button class="btn btn-primary mb-2" routerLink="/account/profile/courses">Ver mis cursos o servicios</button>

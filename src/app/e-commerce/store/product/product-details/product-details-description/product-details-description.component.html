@@ -1,0 +1,13 @@
+<strong>Descripción:</strong>
+<p [innerHTML]="product.description"></p>
+
+<ng-container *ngIf="product.duration">
+  <strong>Duración:</strong>
+  <p [innerHTML]="product.duration"></p>
+</ng-container>
+
+<ng-container *ngIf="product.specs">
+  <strong >Especificaciones:</strong>
+  <p [innerHTML]="product.specs"></p>
+</ng-container>
+

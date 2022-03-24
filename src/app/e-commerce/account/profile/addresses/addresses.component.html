@@ -1,0 +1,191 @@
+<h2 class="text-primary">Direcciones</h2>
+<div class="mb-4"></div><!-- margin -->
+
+<div class="row row-sparse">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Direcciones
+      </div><!-- End .card-header -->
+
+      <div class="card-body">
+        <div class="my-address">
+          <div class="add-address">
+            <a (click)="addAddress()" *ngIf="!editingAddress">Agregar nueva Dirección</a>
+
+            <div class="addresss-form-container" *ngIf="editingAddress">
+              <div autocomplete="off" class="col-6" [formGroup]="shippingAddressForm">
+                <div class="form-group required-field">
+                  <label>Nombre</label>
+                  <input placeholder="Nombre" name="name" type="text" class="form-control" formControlName="name"
+                         [class.is-invalid]="nameNotValid">
+                  <small *ngIf="nameNotValid" class="text-danger">Ingrese su nombre</small>
+                </div><!-- End .form-group -->
+
+                <div class="form-group required-field">
+                  <label>Apellidos</label>
+                  <input placeholder="Apellidos" name="lastname" type="text" class="form-control"
+                         formControlName="lastname" [class.is-invalid]="lastnameNotValid">
+                  <small *ngIf="lastnameNotValid" class="text-danger">Ingrese su apellido</small>
+                </div><!-- End .form-group -->
+
+                <div class="form-group required-field">
+                  <label>DNI</label>
+                  <input placeholder="DNI" name="dni" type="text" class="form-control"
+                         formControlName="dni" [class.is-invalid]="dniNotValid">
+                  <small *ngIf="dniNotValid" class="text-danger">Ingrese tu DNI</small>
+                </div><!-- End .form-group -->
+
+                <div class="form-group required-field">
+                  <label>Correo Electrónico</label>
+                  <input placeholder="example@example.com" name="email" type="email" class="form-control"
+                         formControlName="email" [class.is-invalid]="emailNotValid">
+                  <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+                </div><!-- End .form-group -->
+
+                <div class="form-group required-field">
+                  <label>Dirección</label>
+                  <input placeholder="Av/Ca/Jr" name="address" type="text" class="form-control"
+                         formControlName="address" [class.is-invalid]="addressNotValid">
+                  <small *ngIf="addressNotValid" class="text-danger">Ingrese su dirección</small>
+                </div><!-- End .form-group -->
+
+                <div class="form-group">
+                  <label>Departamento</label>
+                  <div class="select-custom">
+                    <select class="form-control" name="department" formControlName="department"
+                            [class.is-invalid]="departamentNotValid">
+                      <option value="Lima">Lima</option>
+                      <option value="Provincia">Provincia</option>
+                    </select>
+                    <small *ngIf="departamentNotValid" class="text-danger">Ingrese su departamento</small>
+                  </div><!-- End .select-custom -->
+                </div><!-- End .form-group -->
+                <div class="form-group">
+                  <label>Distrito</label>
+                  <div class="select-custom">
+                    <select class="form-control" formControlName="district" name="district"
+                            [class.is-invalid]="districtNotValid">
+                      <option value="ANCÓN"> ANCÓN</option>
+                      <option value="ATE"> ATE</option>
+                      <option value="BARRANCO-10">BARRANCO (Delivery S/10 soles)</option>
+                      <option value="BREÑA"> BREÑA</option>
+                      <option value="CARABAYLLO"> CARABAYLLO</option>
+                      <option value="CHACLACAYO"> CHACLACAYO</option>
+                      <option value="CHORRILLOS-10"> CHORRILLOS (Delivery S/10 soles)</option>
+                      <option value="CIENEGUILLA"> CIENEGUILLA</option>
+                      <option value="COMAS"> COMAS</option>
+                      <option value="EL AGUSTINO"> EL AGUSTINO</option>
+                      <option value="INDEPENDENCIA"> INDEPENDENCIA</option>
+                      <option value="JESÚS MARÍA-FREE50"> JESÚS MARÍA (Delivery gratis desde compras de S/50)</option>
+                      <option value="LA MOLINA-10"> LA MOLINA (Delivery S/10 soles)</option>
+                      <option value="LA VICTORIA"> LA VICTORIA</option>
+                      <option value="LIMA"> LIMA</option>
+                      <option value="LINCE-FREE50"> LINCE (Delivery gratis desde S/50)</option>
+                      <option value="LOS OLIVOS"> LOS OLIVOS</option>
+                      <option value="LURIGANCHO-CHOSICA"> LURIGANCHO-CHOSICA</option>
+                      <option value="LURÍN"> LURÍN</option>
+                      <option value="MAGDALENA DEL MAR (Delivery gratis desde S/50)"> MAGDALENA DEL MAR (Delivery gratis
+                        desde S/50)
+                      </option>
+                      <option value="MIRAFLORES-free"> MIRAFLORES (Delivery gratis desde S/50)</option>
+                      <option value="PACHACÁMAC"> PACHACÁMAC</option>
+                      <option value="PUCUSANA"> PUCUSANA</option>
+                      <option value="PUEBLO LIBRE-FREE50"> PUEBLO LIBRE (Delivery gratis desde S/50)</option>
+                      <option value="PUENTE PIEDRA"> PUENTE PIEDRA</option>
+                      <option value="PUNTA HERMOSA"> PUNTA HERMOSA</option>
+                      <option value="PUNTA NEGRA"> PUNTA NEGRA</option>
+                      <option value="RÍMAC"> RÍMAC</option>
+                      <option value="SAN BARTOLO"> SAN BARTOLO</option>
+                      <option value="SAN BORJA-10"> SAN BORJA (Delivery S/10 soles)</option>
+                      <option value="SAN ISIDRO-FREE50"> SAN ISIDRO (Delivery gratis desde S/50)</option>
+                      <option value="SAN JUAN DE LURIGANCHO"> SAN JUAN DE LURIGANCHO</option>
+                      <option value="SAN JUAN DE MIRAFLORES"> SAN JUAN DE MIRAFLORES</option>
+                      <option value="SAN LUIS"> SAN LUIS</option>
+                      <option value="SAN MARTIN DE PORRES"> SAN MARTIN DE PORRES</option>
+                      <option value="SAN MIGUEL-FREE50"> SAN MIGUEL (Delivery gratis desde S/50)</option>
+                      <option value="SANTA ANITA"> SANTA ANITA</option>
+                      <option value="SANTA MARÍA DEL MAR"> SANTA MARÍA DEL MAR</option>
+                      <option value="SANTA ROSA"> SANTA ROSA</option>
+                      <option value="SANTIAGO DE SURCO-10"> SANTIAGO DE SURCO (Delivery S/10 soles)</option>
+                      <option value="SURQUILLO"> SURQUILLO</option>
+                      <option value="VILLA EL SALVADOR"> VILLA EL SALVADOR</option>
+                      <option value="VILLA MARIA DEL TRIUNFO"> VILLA MARIA DEL TRIUNFO</option>
+                    </select>
+                    <small *ngIf="districtNotValid" class="text-danger">Ingrese su distrito</small>
+                  </div><!-- End .select-custom -->
+                </div><!-- End .form-group -->
+              </div>
+              <div autocomplete="off" class="col-6" [formGroup]="shippingAddressForm">
+                <div class="form-group">
+                  <label>País</label>
+                  <div class="select-custom">
+                    <select class="form-control" name="country" formControlName="country"
+                            [class.is-invalid]="countryNotValid">
+                      <option value="Perú">Perú</option>
+                      <option value="Chile">Chile</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Ecuador">Ecuador</option>
+                    </select>
+                    <small *ngIf="countryNotValid" class="text-danger">Ingrese el pais</small>
+                  </div><!-- End .select-custom -->
+                </div><!-- End .form-group -->
+
+                <div class="form-group required-field">
+                  <label>Teléfono</label>
+                  <div class="form-control-tooltip">
+                    <input placeholder="Teléfono" name="phone" type="tel" class="form-control" formControlName="phone"
+                           [class.is-invalid]="phoneNotValid">
+                    <small *ngIf="phoneNotValid" class="text-danger">Ingrese su teléfono</small>
+                    <span class="input-tooltip" data-toggle="tooltip" title="For delivery questions."
+                          data-placement="right"><i class="icon-question-circle"></i></span>
+                  </div><!-- End .form-control-tooltip -->
+                </div><!-- End .form-group -->
+
+                <div class="form-group-custom-control">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="address-save">
+                    <!--                    <label class="custom-control-label" for="address-save">Guardar Dirección</label>-->
+                  </div><!-- End .custom-checkbox -->
+                </div><!-- End .form-group -->
+              </div>
+
+              <div class="buttons-wrapper p-3">
+                <button class="btn btn-primary mr-3"
+                        (click)="saveAddress()"
+                        [disabled]="!shippingAddressForm.valid">Guardar</button>
+                <button class="btn btn-secondary" (click)="cancelEdition()">Cancelar</button>
+              </div>
+            </div>
+          </div>
+          <ng-container *ngIf="!editingAddress">
+            <div class="address-box mb-4" *ngFor="let address of user.addresses; let index = index">
+              <div class="address-list">
+                <ul>
+                  <li>{{address.name}} {{address.lastname}}</li>
+                  <li>DNI: {{address.dni}}</li>
+                  <li>Teléfono: {{address.phone}}</li>
+                  <li>Dirección: {{address.address}} </li>
+                  <li>Ciudad / Distrito: {{address.district}}</li>
+                  <li>Departamento/ Estado: {{address.department}}</li>
+                  <li>País: {{address.country}}</li>
+                </ul>
+                <span class="address-pred" *ngIf="address.main">✓ Dirección predeterminada de envío</span>
+              </div>
+              <div class="address-options">
+                <a (click)="editAddress(index)"><i class="fas fa-edit"></i>Editar</a>
+<!--                <a (click)="makePrincipal(index)" *ngIf="!address.main">Hacer Principal</a>-->
+                <a (click)="removeAddress(index)"><i class="fas fa-trash-alt"></i>Eliminar</a>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <ng-template>
+          <!-- <ng-template #noData> -->
+          <h6 class="text-black-50">No tienes direcciones registradas aún con nosotros.</h6>
+
+        </ng-template>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+</div><!-- End .row -->

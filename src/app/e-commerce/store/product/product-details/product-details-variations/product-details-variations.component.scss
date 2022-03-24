@@ -1,0 +1,19 @@
+.variations {
+  display: flex;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+
+  .variation {
+    margin-right: 10px;
+    padding: 5px;
+    text-align: center;
+    border: 1px dashed lightgray;
+    cursor: pointer;
+
+    &.active {
+      border: 1px solid orange;
+      color: white;
+      background-color: #f4b08d;
+    }
+  }
+}

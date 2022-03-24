@@ -1,0 +1,29 @@
+<app-form-booking-step-1 class="register-form"
+                         *ngIf="bookingData.registerStep === 1"
+                         [bookingData]="bookingData"
+                         [product]="product"
+                         [user]="user">
+</app-form-booking-step-1>
+
+<app-form-booking-step-2 class="register-form"
+                         *ngIf="bookingData.registerStep === 2"
+                         [product]="product"
+                         [bookingData]="bookingData">
+</app-form-booking-step-2>
+
+<app-form-booking-step-registered class="register-form"
+                                  *ngIf="bookingData.registerStep === 'registered'"
+                                  [bookingData]="bookingData"
+                                  [user]="user">
+</app-form-booking-step-registered>
+
+<app-form-booking-step-more-info class="register-form"
+                                 *ngIf="bookingData.registerStep === 'moreinfo'"
+                                 [user]="user">
+</app-form-booking-step-more-info>
+
+<app-form-booking-step-gift class="register-form"
+                            *ngIf="bookingData.registerStep === 'gift'"
+                            [bookingData]="bookingData"
+                            [product]="product">
+</app-form-booking-step-gift>

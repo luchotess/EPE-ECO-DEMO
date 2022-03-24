@@ -1,0 +1,75 @@
+<div class="overlay"></div>
+
+<div *ngIf="!error" class="card">
+
+  <div class="top">
+    <div class="payment">Detalles de la tarjeta</div>
+    <div class="close pointer" (click)="closePopup()"><i class="fas fa-times-circle"></i></div>
+  </div>
+  <div class="card-body">
+
+    <form>
+      <div class="one">
+        <label>Nombre en la tarjeta</label>
+        <input placeholder='' type='text'>
+      </div>
+
+      <div class="two">
+        <label>Número de trajeta</label>
+        <input maxlength='16' placeholder='' type='tel'>
+      </div>
+
+      <div class="three">
+        <label>Fecha de Expiración</label>
+        <select>
+          <option>Enero</option>
+          <option>Febrero</option>
+          <option>Marzo</option>
+          <option>Abril</option>
+          <option>May</option>
+          <option>Junio</option>
+          <option>Julio</option>
+          <option>Agosto</option>
+          <option>Septiembre</option>
+          <option>October</option>
+          <option>Noviembre</option>
+          <option>Deciembre</option>
+        </select>
+      </div>
+
+      <div class="four">
+        <!-- blank character -->
+        <label>&#x200b;</label>
+        <select>
+          <option>2021</option>
+          <option>2022</option>
+          <option>2023</option>
+          <option>2024</option>
+          <option>2025</option>
+          <option>2026</option>
+          <option>2027</option>
+          <option>2028</option>
+          <option>2029</option>
+          <option>2030</option>
+        </select>
+      </div>
+      <div class="five">
+        <label>CVV</label>
+        <input maxlength='3' placeholder='633' type='tel'>
+      </div>
+      <button class="btn btn-dark" type="submit" (click)="submitCard() ">Aceptar</button>
+    </form>
+    <br>
+  </div>
+  <div>
+    <img class="save-img" src="/assets/images/candadito.png" alt="">
+    <img class="save-img" src="/assets/images/pagoseguro.png" alt="">
+  </div>
+</div>
+
+<div *ngIf="error" class="card">
+  <h2 class="align-self-center">Error</h2>
+  <p class="align-self-center">No se pudo realizar el pago</p>
+  <button class="btn btn-dark" type="submit" (click)="closePopup() ">Cerrar</button>
+  <br>
+</div>

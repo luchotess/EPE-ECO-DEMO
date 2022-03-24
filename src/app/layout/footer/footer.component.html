@@ -1,0 +1,93 @@
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container top-border d-flex align-items-center justify-content-between flex-wrap">
+      <app-footer-newsletter></app-footer-newsletter>
+      <app-footer-social></app-footer-social>
+    </div>
+  </div>
+
+  <div class="footer-middle">
+    <div class="container">
+      <div class="row">
+        <div class="ccol-sm-6 col-lg-6 ">
+          <div class="widget">
+            <h4 class="widget-title">Información de Contacto</h4>
+
+            <div class="row">
+
+              <div class="col-sm-12">
+                <div class="contact-widget email-epe email pb-4">
+                  <h4 class="widget-title">Correo: </h4>
+                  <a href="mailto:contacto@escuelaparaembarazadas.com">contacto@escuelaparaembarazadas.com</a>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <h4 class="widget-title">Sede Lince</h4>
+                <div class="contact-widget">
+                  <div>
+                    <h4 class="widget-title">Dirección</h4>
+                    <p>Av. Arequipa 2080-307</p>
+                  </div>
+                  <div>
+                    <h4 class="widget-title">Teléfono</h4>
+                    <p><a href="tel:992276497">(+51) 992 276 497</a></p>
+                    <p><a href="tel:999273940">(+51) 999 273 940</a></p>
+                    <p><a href="tel:012657335">(01) 265 7335</a></p>
+                  </div>
+                  <div>
+                    <h4 class="widget-title">Horarios</h4>
+                    <p>Lun - Sáb / 9.30 am - 7:00 pm</p>
+                    <p>Dom / 9.30 am - 1:00 pm</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+
+                <h4 class="widget-title">Sede Miraflores</h4>
+                <div class="contact-widget">
+                  <div>
+                    <h4 class="widget-title">Dirección</h4>
+                    <p>Av. Pardo 541-110</p>
+                  </div>
+                  <div>
+
+                    <h4 class="widget-title">Teléfono</h4>
+                    <p><a href="tel:014465763">(01) 446 5763</a></p>
+                    <p><a href="tel:989876006">(+51) 989 876 006</a></p>
+                  </div>
+                  <div>
+                    <h4 class="widget-title">Horarios</h4>
+                    <p>Lun - Vie / 2:00pm - 9:00pm</p>
+                    <p>Sáb / 9:00am - 7:00pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2 ">
+          <div class="widget">
+            <h4 class="widget-title">Mi Cuenta</h4>
+            <ul class="links link-parts row">
+              <div class="link-part col-xl-6">
+                <li><a routerLink="/static/contact">Contáctanos</a></li>
+                <li><a routerLink="/account/profile">Ver Cuenta</a></li>
+              </div>
+            </ul>
+          </div><!-- End .widget -->
+        </div>
+        <div class="col-sm-6 col-lg-4 ">
+          <app-footer-categorie-list [categories]="categories"></app-footer-categorie-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container top-border d-flex align-items-center justify-content-between flex-wrap">
+      <p class="footer-copyright mb-0 py-3 pr-3">AltPaca Studio &copy; 2020. All Rights Reserved</p>
+      <!--      <img class="py-3" src="/assets/images/payments.png" alt="payment image">-->
+    </div>
+  </div>
+</footer>
+

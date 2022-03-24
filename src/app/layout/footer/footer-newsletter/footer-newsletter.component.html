@@ -1,0 +1,30 @@
+<div class="footer-left widget-newsletter d-md-flex align-items-center">
+  <div class="widget-newsletter-info">
+    <h5 class="widget-newsletter-title text-uppercase m-b-1">¡Déjanos tu correo!</h5>
+    <p class="widget-newsletter-content mb-0">Te enviaremos promociones y descuentos únicos.</p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="footer-submit-wrapper d-flex" *ngIf="!showMessage">
+      <input
+              name="email"
+              formControlName="email"
+              id="email"
+              ngModel
+              type="email"
+              class="form-control"
+              placeholder="Correo electrónico..."
+              size="40"
+              required>
+      <button
+              type="submit"
+              [ngClass]="{'active': !form.invalid}"
+              [disabled]="form.invalid"
+              class="btn btn-dark btn-sm"
+      >Suscribirse
+      </button>
+    </div>
+    <div class="MessageSubscription" *ngIf="showMessage">
+      <small>GRACIAS POR SUSCRIBIRTE</small>
+    </div>
+  </form>
+</div>

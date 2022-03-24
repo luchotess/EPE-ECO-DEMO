@@ -1,0 +1,190 @@
+<main class="main" >
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a href="#">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Protocolos COVID-19</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <!-- <div class="page-header">
+    <div class="container">
+      <h1>Blog</h1>
+    </div>
+  </div> -->
+
+  <div class="container">
+    <div class="row row-sparse">
+      <div class="col-lg-9">
+        <article class="post single">
+          <div class="post-media">
+            <div class="post-slider owl-carousel owl-theme">
+              <img  [src]="article.image" alt="Post">
+            </div><!-- End .post-slider -->
+          </div><!-- End .post-media -->
+
+          <div class="post-body">
+            <div class="post-date">
+              <span class="day">{{article.day}}</span>
+              <span class="month">{{article.month}}</span>
+            </div><!-- End .post-date -->
+
+            <h2 class="post-title">
+              {{article.title}}
+            </h2>
+
+            <div class="post-meta">
+              <span><i class="icon-calendar"></i>{{article.day}} {{article.month}}, {{article.year}}</span>
+<!--              <span><i class="icon-folder-open"></i>-->
+<!--                <a href="#">Protocolos</a>,-->
+<!--                <a href="#">Salud</a>,-->
+<!--                <a href="#">Cuidado</a>-->
+<!--              </span>-->
+            </div><!-- End .post-meta -->
+
+            <div class="post-content" [innerHTML]="article.content">
+            </div><!-- End .post-content -->
+
+            <div class="post-share">
+              <h3>
+                <i class="icon-forward"></i>
+                Compartir Post
+              </h3>
+
+              <div class="social-icons">
+                <a href="https://www.facebook.com/Escuela-para-Embarazadas-141564679232115/"
+                  class="social-icon social-facebook icon-facebook" target="_blank"></a>
+                <a href="https://api.whatsapp.com/send?phone=+51992276497&text=Hola%20quisiera%20saber%20mas%20sobre%20los%20productos%20"
+                   class="social-icon social-whatsapp " target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/escuela_para_embarazadas/"
+                  class="social-icon social-instagram icon-instagram" target="_blank"></a>
+              </div><!-- End .social-icons -->
+            </div><!-- End .post-share -->
+
+
+<!--            <div class="comment-respond">-->
+<!--              <h3>Leave a Reply</h3>-->
+<!--              <p>Your email address will not be published. Required fields are marked *</p>-->
+
+<!--              <form action="#">-->
+<!--                <div class="form-group required-field">-->
+<!--                  <label>Comment</label>-->
+<!--                  <textarea cols="30" rows="1" class="form-control" required></textarea>-->
+<!--                </div>&lt;!&ndash; End .form-group &ndash;&gt;-->
+
+<!--                <div class="form-group required-field">-->
+<!--                  <label>Name</label>-->
+<!--                  <input type="text" class="form-control" required>-->
+<!--                </div>&lt;!&ndash; End .form-group &ndash;&gt;-->
+
+<!--                <div class="form-group required-field">-->
+<!--                  <label>Email</label>-->
+<!--                  <input type="email" class="form-control" required>-->
+<!--                </div>&lt;!&ndash; End .form-group &ndash;&gt;-->
+
+<!--                <div class="form-group">-->
+<!--                  <label>Website</label>-->
+<!--                  <input type="url" class="form-control">-->
+<!--                </div>&lt;!&ndash; End .form-group &ndash;&gt;-->
+
+<!--                <div class="form-group-custom-control mb-3">-->
+<!--                  <div class="custom-control custom-checkbox">-->
+<!--                    <input type="checkbox" class="custom-control-input" id="save-name">-->
+<!--                    <label class="custom-control-label" for="save-name">Save my name, email, and website in this browser-->
+<!--                      for the next time I comment.</label>-->
+<!--                  </div>&lt;!&ndash; End .custom-checkbox &ndash;&gt;-->
+<!--                </div>&lt;!&ndash; End .form-group-custom-control &ndash;&gt;-->
+
+<!--                <div class="form-footer">-->
+<!--                  <button type="submit" class="btn btn-primary">Post Comment</button>-->
+<!--                </div>&lt;!&ndash; End .form-footer &ndash;&gt;-->
+<!--              </form>-->
+<!--            </div>-->
+          </div><!-- End .post-body -->
+        </article><!-- End .post -->
+
+      </div><!-- End .col-lg-9 -->
+
+      <aside class="sidebar col-lg-3">
+        <div class="sidebar-wrapper">
+          <!--          <div class="widget widget-search">-->
+          <!--            <form role="search" method="get" class="search-form" action="#">-->
+          <!--              <input type="search" class="form-control" placeholder="Search posts here..." name="s" required>-->
+          <!--              <button type="submit" class="search-submit" title="Search">-->
+          <!--                <i class="icon-search"></i>-->
+          <!--                <span class="sr-only">Search</span>-->
+          <!--              </button>-->
+          <!--            </form>-->
+          <!--          </div>&lt;!&ndash; End .widget &ndash;&gt;-->
+
+          <!--          <div class="widget widget-categories">-->
+          <!--            <h4 class="widget-title">Blog Categories</h4>-->
+
+          <!--            <ul class="list">-->
+          <!--              <li><a href="#">Accessories</a></li>-->
+          <!--              <li><a href="#">Fashion trends</a></li>-->
+          <!--              <li><a href="#">Haircuts &amp; hairstyles</a></li>-->
+          <!--            </ul>-->
+          <!--          </div>&lt;!&ndash; End .widget &ndash;&gt;-->
+
+          <!--          <div class="widget">-->
+          <!--            <h4 class="widget-title">Recent Posts</h4>-->
+
+          <!--            <ul class="simple-post-list">-->
+          <!--              <li>-->
+          <!--                <div class="post-media">-->
+          <!--                  <a href="single.html">-->
+          <!--                    <img src="assets/images/blog/widget/post-1.jpg" alt="Post">-->
+          <!--                  </a>-->
+          <!--                </div>&lt;!&ndash; End .post-media &ndash;&gt;-->
+          <!--                <div class="post-info">-->
+          <!--                  <a href="single.html">Post Format - Video</a>-->
+          <!--                  <div class="post-meta">-->
+          <!--                    April 08, 2018-->
+          <!--                  </div>&lt;!&ndash; End .post-meta &ndash;&gt;-->
+          <!--                </div>&lt;!&ndash; End .post-info &ndash;&gt;-->
+          <!--              </li>-->
+
+          <!--              <li>-->
+          <!--                <div class="post-media">-->
+          <!--                  <a href="single.html">-->
+          <!--                    <img src="assets/images/blog/widget/post-2.jpg" alt="Post">-->
+          <!--                  </a>-->
+          <!--                </div>&lt;!&ndash; End .post-media &ndash;&gt;-->
+          <!--                <div class="post-info">-->
+          <!--                  <a href="single.html">Post Format - Image Gallery</a>-->
+          <!--                  <div class="post-meta">-->
+          <!--                    March 23, 2016-->
+          <!--                  </div>&lt;!&ndash; End .post-meta &ndash;&gt;-->
+          <!--                </div>&lt;!&ndash; End .post-info &ndash;&gt;-->
+          <!--              </li>-->
+          <!--            </ul>-->
+          <!--          </div>&lt;!&ndash; End .widget &ndash;&gt;-->
+
+          <div class="widget">
+            <h4 class="widget-title">Links Relacionados</h4>
+
+            <div class="tagcloud">
+              <a *ngFor=" let a of article.links " [routerLink]="a.link">{{a.text}}</a>
+            </div><!-- End .tagcloud -->
+          </div><!-- End .widget -->
+
+          <div class="widget">
+            <h4 class="widget-title">Archivo</h4>
+
+            <ul class="list">
+              <li><a href="#">Octubre 2020</a></li>
+            </ul>
+          </div><!-- End .widget -->
+
+        </div><!-- End .sidebar-wrapper -->
+      </aside><!-- End .col-lg-3 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-6"></div><!-- margin -->
+</main>

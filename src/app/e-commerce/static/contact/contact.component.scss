@@ -1,0 +1,39 @@
+agm-map {
+  height: 450px;
+  display: block;
+  margin: 0 0 50px;
+}
+
+agm-info-window {
+  background-color: white;
+  width: 350px;
+  height: 350px;
+  display: block;
+}
+
+.carousel-cell {
+  background-color: #f1f1f1;
+  text-align: center;
+
+  img {
+    //display: inline-block;
+  }
+}
+
+::ng-deep .address {
+  margin-top: 5px;
+}
+
+a {
+  color: #12ABB5;
+}
+
+p {
+  color: gray;
+}
+label{
+  color: gray;
+}
+.required-field > label:after {
+  color: #baa1c1;
+}

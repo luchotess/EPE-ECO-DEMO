@@ -1,0 +1,21 @@
+<div class="detailOrder-popup" id="detailOrder-popup-form" [class.active]="_AppService.modals.detailOrder">
+  <div class="close pointer" (click)="_AppService.hideAllModals()">x</div>
+  <div class="detailOrder-popup-content">
+    <h1>Detalle de Orden</h1>
+
+    <div *ngFor="let cart of orders">
+      <div class="orderList">
+        <img src="{{cart.item.images.featured.url}}" width="80" alt="">
+        <div class="details">
+          <span class="title">{{cart.item.title}}</span>
+          <span class="qty">Cantidad : {{cart.qty}}</span>
+        </div>
+        <div class="price">
+          <span style="text-decoration:line-through;">S/.{{cart.item.price.old}}</span>
+          <strong>S/.{{cart.item.price.actual}}</strong>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- End .restrictions-popup-content -->
+</div><!-- End .restrictions-popup -->

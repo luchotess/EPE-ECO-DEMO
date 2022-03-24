@@ -1,0 +1,14 @@
+<div *ngIf="product.variations && product.variations[productPageSettings.selectedVariation]">
+  <strong>Stock:</strong>
+  {{ product.variations[productPageSettings.selectedVariation].stock }} {{ product.booking ? 'cupos' : 'unidades' }}
+
+  <p class="message-alert">
+      <span *ngIf="product.variations[productPageSettings.selectedVariation].stock <= stockWarningQty">
+        ¡Apúrate, quedan {{ product.booking ? 'pocos cupos' : 'pocas unidades' }}!
+      </span>
+  </p>
+</div>
+
+<p *ngIf="product.stock && !product.variations">
+  <strong>Stock:</strong> {{ product.stock }} {{ product.booking ? 'cupos' : 'unidades' }}
+</p>

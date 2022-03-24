@@ -1,0 +1,12 @@
+<div class="widget">
+  <h4 class="widget-title">Categorías</h4>
+  <ul class="links link-parts row">
+    <div class="link-part col-xl-12 l-products">
+      <li *ngFor="let category of categories">
+        <a [class.strong]="!category.parentId" routerLink="../../tienda/{{storeUrl}}/{{category.url}}">
+          {{category.title}}
+        </a>
+      </li>
+    </div>
+  </ul>
+</div>

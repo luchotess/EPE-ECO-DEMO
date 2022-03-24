@@ -1,0 +1,56 @@
+[
+  {
+    "categoryId": "9",
+    "title": "Cursos",
+    "url": "cursos",
+    "parentId":""
+  },
+  {
+    "categoryId": "10",
+    "title": "Cursos para Bebés",
+    "url": "curso-bebes",
+    "parentId":"9"
+  },
+  {
+    "categoryId": "11",
+    "title": "Cursos para Embarazadas",
+    "url": "curso-Embarazadas",
+    "parentId":"9"
+  },
+  {
+    "categoryId": "12",
+    "title": "Servicios",
+    "url": "servicios",
+    "parentId":""
+  },
+  {
+    "categoryId": "13",
+    "title": "Cardiotocografía fetal",
+    "url": "cardio-fetal",
+    "parentId":"12"
+  },
+  {
+    "categoryId": "14",
+    "title": "Crianza y cuidados del recién nacido",
+    "url": "crianza-y-cuidados-del-recien-nacido",
+    "parentId":"12"
+  },
+  {
+    "categoryId": "15",
+    "title": "Lactancia Materna",
+    "url": "Lactancia-Materna",
+    "parentId":"12"
+  },
+  {
+    "categoryId": "16",
+    "title": "Nutrición",
+    "url": "Nutrición",
+    "parentId":"12"
+  },
+  {
+    "categoryId": "17",
+    "title": "Psicología",
+    "url": "Psicología",
+    "parentId":"12"
+  }
+]

@@ -1,0 +1,142 @@
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contáctanos</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1> Contáctanos</h1>
+    </div><!-- End .container -->
+  </div><!-- End .page-header -->
+
+  <div class="container">
+<!--    <div id="map"></div>-->
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-marker [latitude]="lat1" [longitude]="lng1" [iconUrl]="icon">
+        <agm-info-window [disableAutoPan]="false" #infoWindow2>
+
+          <div class="address">
+            Av. Arequipa 2080-307
+          </div>
+
+        </agm-info-window>
+      </agm-marker>
+      <agm-marker [latitude]="lat2" [longitude]="lng2" [iconUrl]="icon">
+        <agm-info-window [disableAutoPan]="false" #infoWindow2>
+
+          <div class="address">
+            Av. Pardo 541-110
+          </div>
+        </agm-info-window>
+      </agm-marker>
+
+    </agm-map>
+
+    <div class="row row-sparse">
+      <div class="col-md-6">
+        <h2 class="light-title"> <strong>Escríbenos</strong></h2>
+
+        <div *ngIf="!sent">
+          <div class="form-group required-field">
+            <label for="contact-name">Nombre</label>
+            <input type="text" class="form-control" id="contact-name" name="contact-name" required [(ngModel)]="user.firstname">
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label for="contact-email">Email</label>
+            <input type="email" class="form-control" id="contact-email" name="contact-email" required [(ngModel)]="user.email">
+          </div><!-- End .form-group -->
+
+          <div class="form-group">
+            <label for="contact-phone">Número de teléfono</label>
+            <input type="tel" class="form-control" id="contact-phone" name="contact-phone" [(ngModel)]="user.phone">
+          </div><!-- End .form-group -->
+
+          <div class="form-group required-field">
+            <label for="contact-message">¿Qué tienes en mente?</label>
+            <textarea cols="30" rows="1" id="contact-message" class="form-control" name="contact-message" required [(ngModel)]="user.message"></textarea>
+          </div><!-- End .form-group -->
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary" (click)="send()">Enviar</button>
+          </div><!-- End .form-footer -->
+        </div>
+
+        <div *ngIf="sent">
+          <h4>¡Gracias! Nos pondremos en contacto contigo muy pronto.</h4>
+        </div>
+      </div><!-- End .col-md-8 -->
+
+      <div class="col-md-6">
+        <h2 class="light-title"> <strong>Detalles</strong> de Contacto</h2>
+
+        <div class="contact-info">
+         <h3>Ventas e informes</h3>
+          <div>
+            <i class="icon-mail-alt"></i>
+            <p><a href="mailto:contacto@escuelaparaembarazadas.com">contacto@escuelaparaembarazadas.com</a></p>
+          </div>
+
+          <h3>Sede Lince</h3>
+          <div>
+            <i class="icon-home"></i>
+            <p>Av. Arequipa 2080-307</p>
+          </div>
+          <div>
+            <i class="icon-phone"></i>
+            <p><a href="tel:012657335">(01) 265 7335</a></p>
+          </div>
+          <div>
+            <i class="icon-mobile"></i>
+            <p><a href="tel:992276497">992 276 497</a></p>
+            <p><a href="tel:999273940">999 273 940</a></p>
+          </div>
+          <div>
+            <i class="icon-clock"></i>
+            <p>Lun - Sáb / 9.30 am - 7:00 pm</p>
+            <p>Dom / 9.30 am - 1:00 pm</p>
+          </div>
+          <div class="caja-carousel">
+            <carousel [arrowsTheme]="'dark'" [autoplay]="true" [autoplayInterval]="1000" >
+              <div class="carousel-cell" *ngFor="let image of imagesLince">
+                <img [src]="image.source">
+              </div>
+            </carousel>
+          </div>
+          <h3 class="mt-2">Sede Miraflores</h3>
+          <div>
+            <i class="icon-home"></i>
+            <p>Av. Pardo 541-110</p>
+          </div>
+          <div>
+            <i class="icon-phone"></i>
+            <p><a href="tel:014465763">(01) 446 5763</a></p>
+          </div>
+          <div>
+            <i class="icon-mobile"></i>
+            <p><a href="tel:989876006">989 876 006</a></p>
+          </div>
+          <div>
+            <i class="icon-clock"></i>
+            <p>Lun - Vie / 2:00pm - 9:00pm</p>
+            <p>Sáb / 9:00am - 7:00pm</p>
+          </div>
+          <div>
+             <carousel [arrowsTheme]="'dark'" [autoplay]="true" [autoplayInterval]="1000" >
+             <div class="carousel-cell" *ngFor="let image of imagesMiraflores">
+                <img [src]="image.source">
+             </div>
+            </carousel>
+          </div>
+        </div><!-- End .contact-info -->
+      </div><!-- End .col-md-4 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-8"></div><!-- margin -->
+</main><!-- End .main -->

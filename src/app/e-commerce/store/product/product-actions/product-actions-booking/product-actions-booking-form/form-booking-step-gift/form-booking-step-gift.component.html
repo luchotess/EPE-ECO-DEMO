@@ -1,0 +1,17 @@
+<h4>Paso 2 de 3.</h4>
+<h5>Necesitamos los datos de la persona que recibirá el curso de regalo.</h5>
+
+<input name="name" type="text" class="form-control" placeholder="Nombres" required
+       [(ngModel)]="bookingData.courseQuestionsData['Nombre']">
+<input name="lastname" type="text" class="form-control" placeholder="Apellidos" required
+       [(ngModel)]="bookingData.courseQuestionsData['Apellido']">
+
+<input name="email" type="email" class="form-control" placeholder="Correo Electrónico" required
+       [(ngModel)]="bookingData.courseQuestionsData['Email']">
+<input name="phone" type="tel" class="form-control" placeholder="Número Celular" required
+       [(ngModel)]="bookingData.courseQuestionsData['Telefono']">
+<input name="dni" type="tel" class="form-control" placeholder="DNI/CE" required
+       [(ngModel)]="bookingData.courseQuestionsData['DNI']">
+
+<button class="btn btn-primary mb-2" (click)="registerAttempt()" [disabled]="fetching || invalid">Inscribir
+</button>

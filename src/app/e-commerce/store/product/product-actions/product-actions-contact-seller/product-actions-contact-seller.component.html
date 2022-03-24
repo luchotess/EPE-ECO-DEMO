@@ -1,0 +1,7 @@
+<ng-container *ngIf="sellerContactInfo.type === 'whatsapp'">
+  <a class="btn btn-block btn-outline-info mt-3 mb-3"
+     [href]="sellerContactInfo.url"
+     target="_blank">
+    {{ sellerContactInfo.text }}
+  </a>
+</ng-container>

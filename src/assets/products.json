@@ -1,0 +1,849 @@
+[
+  {
+    "id": "",
+    "url": "psicoprofilaxis",
+    "title": "Psicoprofilaxis",
+    "description": "Preparación para un embarazo saludable, un feliz parto, crianza y lactancia natural. <br/> Online en vivo 50% de descuento. <br/><br/> Presencial <br/> Hasta 30% de descuento. <br/> Miraflores - Lince.",
+    "labels": [],
+    "duration": "7 sesiones de 2 horas y 2 de Gym y Baile de 45 min ONLINE.",
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "old": 490,
+      "actual": 245
+    },
+    "images": {
+      "featured": {
+        "title": "Psicoprofilaxis",
+        "type": "image",
+        "url": "/assets/images/products/Psicoprofilaxis1.jpg"
+      },
+      "images": [
+        {
+          "title": "Psicoprofilaxis",
+          "type": "image",
+          "url": "/assets/images/products/Psicoprofilaxis1.jpg"
+        },
+        {
+          "title": "Psicoprofilaxis",
+          "type": "image",
+          "url": "/assets/images/products/Psicoprofilaxis2.jpg"
+        },
+        {
+          "title": "Psicoprofilaxis",
+          "type": "image",
+          "url": "/assets/images/products/Psicoprofilaxis3.jpg"
+        },
+        {
+          "title": "Psicoprofilaxis",
+          "type": "image",
+          "url": "/assets/images/products/Psicoprofilaxis4.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para Embarazadas",
+        "url": "curso-Embarazadas"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Entrenamiento de la gestante y papá para un buen embarazo, parto, nacimiento, crianza y lactancia natural.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": [
+        "Lun - Vie [5pm - 7pm]",
+        "Sábado [4pm - 6pm]",
+        "Domingo [9:15am - 11:00am]"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas de embarazo (1 a la 40)",
+        "type": "number"
+      },
+      {
+        "title": "En caso de tener seguro seleccionar cuál:",
+        "type": "select",
+        "options": [
+          "MAPFRE",
+          "SANITAS",
+          "PACIFICO",
+          "OTROS",
+          "NINGUNO"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "Baile",
+    "title": "Baile",
+    "description": "Preparación corporal funcional, endorfinas y movimiento. <br/> Online en vivo 50% de descuento. <br/><br/> Presencial <br/> Hasta 30% de descuento. <br/> Miraflores - Lince.",
+    "labels": [],
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "old": 220,
+      "actual": 110
+    },
+    "images": {
+      "featured": {
+        "title": "Baile",
+        "type": "image",
+        "url": "/assets/images/products/BaileyGym1.jpg"
+      },
+      "images": [
+        {
+          "title": "Baile",
+          "type": "image",
+          "url": "/assets/images/products/BaileyGym1.jpg"
+        },
+        {
+          "title": "Baile",
+          "type": "image",
+          "url": "/assets/images/products/BaileyGym2.jpg"
+        },
+        {
+          "title": "Baile",
+          "type": "image",
+          "url": "/assets/images/products/BaileyGym3.jpg"
+        },
+        {
+          "title": "Baile",
+          "type": "image",
+          "url": "/assets/images/products/BaileyGym4.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para Embarazadas",
+        "url": "curso-Embarazadas"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "8 sesiones de 45 minutos con tutora Obstetra.",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "18:00pm"
+      ],
+      "days": [
+        "Martes",
+        "Jueves"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas de embarazo (1 a la 40)",
+        "type": "number"
+      },
+      {
+        "title": "¿Tiene restricción de actividad física por complicaciones del embarazo?:",
+        "type": "select",
+        "options": [
+          "sí",
+          "no"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "Crianza-Cuidados-del-recien-nacido",
+    "title": "Crianza y cuidados del recién nacido",
+    "description": "curso embarazada",
+    "labels": [],
+    "duration": "Hasta 2 horas",
+    "booking": true,
+    "book": false,
+    "availableToSell": true,
+    "price": {
+      "old": 150,
+      "actual": 100
+    },
+    "images": {
+      "featured": {
+        "title": "Crianza Cuidados del recién nacido",
+        "type": "image",
+        "url": "/assets/images/products/Crianza.jpg"
+      },
+      "images": [
+        {
+          "title": "Crianza Cuidados del recién nacido",
+          "type": "image",
+          "url": "/assets/images/products/Crianza.jpg"
+        },
+        {
+          "title": "Crianza Cuidados del recién nacido",
+          "type": "image",
+          "url": "/assets/images/products/Crianza2.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "servicios"
+      },
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "crianza-y-cuidados-del-recien-nacido"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Taller personalizado que incluye entre otros, higiene, baño del recién nacido, signos de alarma, cuidados del cordón umbilical, porteo etc.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": null
+    },
+    "type": "servicio",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": []
+  },
+  {
+    "id": "",
+    "url": "Psicología",
+    "title": "Psicología",
+    "description": "Abordaje y asesoría en temas de adaptación al embarazo, post parto, infancia, abordaje del estrés, conflictos familiares.",
+    "labels": [],
+    "duration": "Hasta 1 hora.\n",
+    "booking": true,
+    "book": false,
+    "availableToSell": true,
+    "price": {
+      "old": 100,
+      "actual": 80
+    },
+    "images": {
+      "featured": {
+        "title": "Psicología",
+        "type": "image",
+        "url": "/assets/images/products/psicologia.jpg"
+      },
+      "images": [
+        {
+          "title": "Psicología",
+          "type": "image",
+          "url": "/assets/images/products/psicologia.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "servicios"
+      },
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "Psicología"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Abordaje y asesoría en temas de adaptación al embarazo, post parto, infancia, abordaje del estrés, conflictos familiares.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": null
+    },
+    "type": "servicio",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": []
+  },
+  {
+    "id": "",
+    "url": "Nutrición",
+    "title": "Nutrición",
+    "description": "Consulta en línea personalizada por la profesional  Nutricionista.",
+    "labels": [],
+    "duration": "Hasta 1 hora.\n",
+    "booking": true,
+    "book": false,
+    "availableToSell": true,
+    "price": {
+      "old": 100,
+      "actual": 80
+    },
+    "images": {
+      "featured": {
+        "title": "Nutrición",
+        "type": "image",
+        "url": "/assets/images/products/nutricion.jpg"
+      },
+      "images": [
+        {
+          "title": "Nutrición",
+          "type": "image",
+          "url": "/assets/images/products/nutricion.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "servicios"
+      },
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "Nutrición"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Abordaje y asesoría en Nutrición en la etapa de la gestación, lactancia y de la infancia. A cargo de nuestra experimentada Nutricionista Clínica.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": null
+    },
+    "type": "servicio",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": []
+  },
+  {
+    "id": "",
+    "url": "yoga",
+    "title": "[Online] Yoga y meditación",
+    "description": "Poniendo armonía al embarazo con gran Relajación, Asanas, Pranayamas y más. Modalidad Online. <br/> Online en vivo 40% de descuento. <br/><br/> Presencial<br/> Miraflores - Lince.",
+    "labels": [],
+    "duration": "Ciclo de 4 sesiones de 1 hora. ",
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "old": 140,
+      "actual": 84
+    },
+    "images": {
+      "featured": {
+        "title": "yoga",
+        "type": "image",
+        "url": "/assets/images/products/yoga.jpg"
+      },
+      "images": [
+        {
+          "title": "yoga",
+          "type": "image",
+          "url": "/assets/images/products/yoga.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para Embarazadas",
+        "url": "curso-Embarazadas"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Ponemos pausa y armonía a tu embarzo, \n",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "10:00am"
+      ],
+      "days": [
+        "Domingo"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas de embarazo (1 a la 40)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "Estimulacion-Pre-Natal",
+    "title": "Estimulación Pre Natal",
+    "description": "Estimulación sensorial del bebé en el vientre, Embarazo musical y Escuela para padres.  <br/> Online en vivo 40% de descuento. <br/><br/> Presencial <br/> Hasta 20% de descuento. <br/> Miraflores - Lince.",
+    "labels": [],
+    "duration": "4 sesiones de 1.5 hrs.",
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "old": 290,
+      "actual": 174
+    },
+    "images": {
+      "featured": {
+        "title": "Estimulación Pre Natal",
+        "type": "image",
+        "url": "/assets/images/products/epr1.jpg"
+      },
+      "images": [
+        {
+          "title": "Estimulación Pre Natal",
+          "type": "image",
+          "url": "/assets/images/products/epr1.jpg"
+        },
+        {
+          "title": "Estimulación Pre Natal",
+          "type": "image",
+          "url": "/assets/images/products/epr2.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para Embarazadas",
+        "url": "curso-Embarazadas"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Estimulación sensorial del bebé en el vientre, incluye embarazo musical y Escuela para Padres.",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "18:30pm"
+      ],
+      "days": [
+        "Sábado"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas de embarazo (1 a la 40)",
+        "type": "number"
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "Lactancia-Materna",
+    "title": "Lactancia Materna",
+    "description": "El ABC en lactancia natural incluyendo lactancia y trabajo",
+    "labels": [],
+    "duration": "2 horas",
+    "booking": true,
+    "book": false,
+    "availableToSell": true,
+    "price": {
+      "old": 150,
+      "actual": 100
+    },
+    "images": {
+      "featured": {
+        "title": "Lactancia Materna",
+        "type": "image",
+        "url": "/assets/images/products/lactancia.jpg"
+      },
+      "images": [
+        {
+          "title": "Lactancia Materna",
+          "type": "image",
+          "url": "/assets/images/products/lactancia.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "servicios"
+      },
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "Lactancia-Materna"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Taller personalizado, donde se aborda: Técnicas de amamantamiento, optimizar producción de leche, lactancia y trabajo, banco de leche en casa y más.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": null
+    },
+    "type": "servicio",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": []
+  },
+  {
+    "id": "",
+    "url": "Cardiotocografia-fetal",
+    "title": "Cardiotocografía fetal",
+    "description": "curso embarazada",
+    "labels": [],
+    "booking": true,
+    "book": false,
+    "availableToSell": true,
+    "price": {
+      "old": 120,
+      "actual": 90
+    },
+    "images": {
+      "featured": {
+        "title": "Cardiotocografía fetal",
+        "type": "image",
+        "url": "/assets/images/products/cardiofetal.jpg"
+      },
+      "images": [
+        {
+          "title": "Cardiotocografía fetal",
+          "type": "image",
+          "url": "/assets/images/products/cardiofetal.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "servicios"
+      },
+      {
+        "categoryId": "",
+        "title": "Servicios",
+        "url": "cardio-fetal"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Prueba biofísica, desde las 28 semanas, dura en promedio 30 minutos, importante para el bienestar de tu bebé, más aun si tienes complicaciones o amenaza de parto prematuro.",
+      "details": null
+    },
+    "schedule": {
+      "hours": null,
+      "days": null
+    },
+    "type": "servicio",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": []
+  },
+  {
+    "id": "",
+    "url": "natacion-para-embarazadas",
+    "title": "Natación para Embarazadas",
+    "description": "Fortalecimiento Cardiovascular, Muscular, Respiratorio con enfoque para un buen embarazo parto y proyección a recuperación de figura.",
+    "labels": [],
+    "duration": "4 sesiones de 1 hora.",
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "single": 250,
+      "offer": 370
+    },
+    "images": {
+      "featured": {
+        "title": "Natación para Embarazadas",
+        "type": "image",
+        "url": "/assets/images/products/EPE-NATACION.jpg"
+      },
+      "images": [
+        {
+          "title": "Natación para Embarazadas",
+          "type": "image",
+          "url": "/assets/images/products/EPE-NATACION.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para Embarazadas",
+        "url": "curso-Embarazadas"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Preparación corporal de bajo impacto y grandes beneficios para el embarazo, parto y con proyección a recuperación de figura.",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "14:00pm"
+      ],
+      "days": [
+        "Sábado"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas de embarazo (1 a la 40)",
+        "type": "number"
+      },
+      {
+        "title": "¿Tiene restricción de actividad física por complicaciones del embarazo?:",
+        "type": "select",
+        "options": [
+          "sí",
+          "no"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "aqua-bebe",
+    "title": "Aqua bebé",
+    "description": "Estimulación acuática de bebés de 8 a 24 meses ",
+    "labels": [],
+    "duration": "4 sesiones de 45 min.",
+    "booking": true,
+    "book": true,
+    "availableToSell": false,
+    "price": {
+      "singlePather": 190,
+      "offer": 270
+    },
+    "images": {
+      "featured": {
+        "title": "Aqua bebé",
+        "type": "image",
+        "url": "/assets/images/products/aquabebe.jpg"
+      },
+      "images": [
+        {
+          "title": "Aqua bebé",
+          "type": "image",
+          "url": "/assets/images/products/aquabebe.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para bebés",
+        "url": "curso-bebes"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Natación para bebés de 7 a 36 meses, ciclo de verano.",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "13:00pm",
+        "14:00pm",
+        "15:00pm"
+      ],
+      "days": [
+        "Sábado"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Edad del bebé en meses (número entero del 1 al 36",
+        "type": "number"
+      },
+      {
+        "title": "¿El bebé cuenta con sus vacunas?",
+        "type": "select",
+        "options": [
+          "sí",
+          "no"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "",
+    "url": "estimulacion-temprana",
+    "title": "Estimulación Temprana",
+    "description": "Para niños y niñas de 0 a 3 años, basada en inteligencias múltiples. <br/> Online en vivo 40% de descuento. <br/>Super descuento.",
+    "labels": [],
+    "duration": "ciclo de 8 sesiones de 45 min.",
+    "booking": true,
+    "book": true,
+    "availableToSell": true,
+    "price": {
+      "old": 340,
+      "actual": 225
+    },
+    "images": {
+      "featured": {
+        "title": "Estimulación Temprana",
+        "type": "image",
+        "url": "/assets/images/products/esti-temp.JPG"
+      },
+      "images": [
+        {
+          "title": "Estimulación Temprana",
+          "type": "image",
+          "url": "/assets/images/products/esti-temp.JPG"
+        },
+        {
+          "title": "Estimulación Temprana",
+          "type": "image",
+          "url": "/assets/images/products/eta2.jpg"
+        },
+        {
+          "title": "Estimulación Temprana",
+          "type": "image",
+          "url": "/assets/images/products/eta3.jpg"
+        }
+      ],
+      "thumbnails": []
+    },
+    "categoriesArray": [
+      {
+        "categoryId": "",
+        "title": "cursos",
+        "url": "cursos"
+      },
+      {
+        "categoryId": "",
+        "title": "Curso para bebés",
+        "url": "curso-bebes"
+      }
+    ],
+    "stock": null,
+    "meta": {
+      "fullDescription": "Estimulación oportuna basada en inteligencias múltiples",
+      "details": null
+    },
+    "schedule": {
+      "hours": [
+        "18:30pm"
+      ],
+      "days": [
+        "Sábado"
+      ]
+    },
+    "type": "curso",
+    "isBundle": "",
+    "bundleParentTitle": "",
+    "bundleParentId": "",
+    "bundleItems": [],
+    "questions": [
+      {
+        "title": "Semanas del bebè",
+        "type": "number"
+      },
+      {
+        "title": "¿El bebé cuenta con sus vacunas?",
+        "type": "select",
+        "options": [
+          "sí",
+          "no"
+        ]
+      },
+      {
+        "title": "En caso de tener seguro seleccionar cuál:",
+        "type": "select",
+        "options": [
+          "MAPFRE",
+          "SANITAS",
+          "PACIFICO",
+          "OTROS",
+          "NINGUNO"
+        ]
+      }
+    ]
+  }
+]

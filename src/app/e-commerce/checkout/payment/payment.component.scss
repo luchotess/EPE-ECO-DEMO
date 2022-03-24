@@ -1,0 +1,75 @@
+.checkout-progress-bar li.payed {
+  &:before, :before {
+    background-color: #5bd65b;
+  }
+}
+
+.checkout-progress-bar {
+  li {
+    cursor: pointer;
+  }
+}
+
+.payment-methods-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 15px;
+  min-width: 200px;
+  margin: 0 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .3s;
+  position: relative;
+
+  &.active {
+    border: 2px solid #12ABB5;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    img, h5 {
+      opacity: .2;
+    }
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+
+  h5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  img {
+    max-width: 120px;
+    max-height: 80px;
+  }
+
+  .help-message {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 5px;
+  }
+
+  span {
+    opacity: 0;
+    transition: all .3s;
+    text-align: center;
+  }
+}

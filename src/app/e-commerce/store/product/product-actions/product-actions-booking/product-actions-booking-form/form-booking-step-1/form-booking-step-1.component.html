@@ -1,0 +1,24 @@
+<h4>Paso 1 de 3.</h4>
+<h4><strong>¡Hola {{(user | async).name}}! </strong> Necesitamos los siguientes datos para poder
+  registrarte en
+  el {{ product.book ? 'curso' : 'servicio' }}:</h4>
+
+
+<div *ngFor="let question of product.questions">
+  <h5>{{question.title}}</h5>
+  <input *ngIf="question.type == 'number'" name="weeks" type="number" class="form-control"
+         placeholder="Semanas" required
+         [(ngModel)]="bookingData.courseQuestionsData[question.title]">
+  <select *ngIf="question.type == 'select'" class="form-control" name=""
+          [(ngModel)]="bookingData.courseQuestionsData[question.title]">
+    <option *ngFor="let value of question.options" value="{{value}}">{{value}}</option>
+  </select>
+</div>
+
+<button class="btn btn-primary"
+        [disabled]="this.product.questions && keys(this.bookingData.courseQuestionsData).length < this.product.questions.length"
+        (click)="goToStep(2)">
+  Siguiente
+</button>
+<button class="btn btn-secondary" *ngIf="!(user | async)" (click)="goToStep(null)">Cambiar datos personales
+</button>

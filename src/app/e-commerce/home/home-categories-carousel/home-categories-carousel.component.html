@@ -1,0 +1,18 @@
+<section class="container">
+  <h2 class="section-title ls-n-10 text-center pt-2 m-b-4">Productos por Categoría</h2>
+
+  <div class="owl-carousel owl-theme nav-image-center show-nav-hover nav-outer cats-slider">
+    <ng-container *ngFor="let category of categories">
+      <div class="product-category" *ngIf="category.featured && category.images.images.length > 0" >
+        <a routerLink="/tienda/{{ category.url }}">
+          <figure>
+            <img src="{{ category.images.images[0].url }}">
+          </figure>
+          <div class="category-content">
+            <h3 class="products-category-color">{{ category.title }}</h3>
+          </div>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</section>

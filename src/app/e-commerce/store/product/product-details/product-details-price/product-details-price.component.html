@@ -1,0 +1,32 @@
+<div class="price-box">
+
+  <div class="discont-milk" *ngIf="price.descuento">DCTO DEL MES: -20%</div>
+
+  <div *ngIf="!price.offer" class="regular-price mb-2">
+    Regular: <span class="strikethrough">{{price.old | currency:'S/. '}}</span>
+  </div>
+
+  <span class="d-block mt-1"
+        [class.strikethrough]="price.offer"
+        [class.regular-price]="price.offer"
+        [class.product-price]="!price.offer"
+        [class.text-muted]="price.offer">
+    {{(price.offer ? price.actual : price.old) | currency:'S/. '}}
+  </span>
+
+  <span class="d-block mt-1 product-price">
+    {{(price.offer ? price.offer : price.actual) | currency:'S/. '}}
+  </span>
+
+  <ng-container *ngIf="isBooking">
+    <span class="d-block mt-1 color-price product-price"
+          *ngIf="price.single">Mamá: {{price.single | currency:'S/. '}}
+    </span>
+    <span class="d-block mt-1 color-price product-price"
+          *ngIf="price.singlePather">Un Padre: {{price.singlePather | currency:'S/. '}}
+    </span>
+    <span class="d-block mt-1 color-price product-price"
+          *ngIf="price.offer">En Pareja: {{price.offer | currency:'S/. '}}
+    </span>
+  </ng-container>
+</div><!-- End .price-box -->

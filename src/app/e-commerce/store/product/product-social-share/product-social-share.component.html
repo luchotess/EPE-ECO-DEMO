@@ -1,0 +1,11 @@
+<div class="product-single-share">
+  <label>Compártelo con tus familiares y amigos:</label>
+
+  <div class="social-icons mr-2">
+    <a *ngFor="let social of socialLinks"
+       [href]="social.url"
+       class="social-icon {{social.class}}" target="_blank">
+      <i *ngIf="social.icon" class="fab fa-whatsapp {{social.icon}}"></i>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<h2 class="text-primary">Mis Cursos</h2>
+<div class="mb-4"></div><!-- margin -->
+
+<div class="row row-sparse">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Cursos
+      </div><!-- End .card-header -->
+
+      <div class="card-body">
+        <table class="order-table" *ngIf="courses.length > 0; else noData">
+          <tr>
+            <th>
+              Código de Referencia
+            </th>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Curso
+            </th>
+            <th>
+              Información
+            </th>
+            <th>
+              Total
+            </th>
+            <th>
+              Estado
+            </th>
+          </tr>
+
+          <tr *ngFor="let course of courses">
+            <td><b>{{course.referenceCode.toUpperCase()}}</b></td>
+            <td>{{course.datePlaced | date:'medium'}}</td>
+            <td>{{course.course.title}} <br>
+              <a class="font-weight-bold pointer hover-u"
+                 href="/epe/{{course.course.categories[0].url}}/{{course.course.url}}"
+                 target="_blank">
+                Ver Detalle
+              </a>
+            </td>
+            <td>
+              <ng-container *ngIf="course.courseData">
+                <div *ngFor="let key of keys(course.courseData)">
+                  <strong>{{key}}</strong><br> {{course.courseData[key]}}
+                </div>
+              </ng-container>
+            </td>
+            <td>{{(course.course.price.offer ? course.course.price.offer : course.course.price.actual) | currency:'S/ '}}</td>
+            <td><span class="alert alert-success">{{course.status ? course.status : 'Orden Recibida'}}</span></td>
+          </tr>
+        </table>
+
+        <ng-template #noData>
+          <h6 class="text-black-50">No tienes cursos registrados aún con nosotros.</h6>
+        </ng-template>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+</div><!-- End .row -->

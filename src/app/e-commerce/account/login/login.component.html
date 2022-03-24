@@ -1,0 +1,39 @@
+
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/account">Cuenta</a></li>
+        <li class="breadcrumb-item active"><a>Ingresar</a></li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <form class="container" (ngSubmit)="saveLogin()">
+    <div class="row row-sparse ">
+      <div autocomplete="off" class="col-md-6" [formGroup]="loginForm">
+        <div class="heading">
+          <h2 class="title">Ingresa a tu cuenta</h2>
+          <p>Si tienes una cuenta con nosotros, porfavor escribe tu usuario y contraseña.</p>
+        </div><!-- End .heading -->
+        <small *ngIf="alertSuccess" class="text-danger"> * Su correo o contraseña es incorrecto </small>
+        <input name="email" type="email" class="form-control" formControlName="email" [class.is-invalid]="emailNotValid" placeholder="Correo Electrónico">
+            <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+        <input name="password" type="password" class="form-control" formControlName="password" [class.is-invalid]="passwordNotValid" placeholder="Password">
+          <small *ngIf="passwordNotValid" class="text-danger">Ingrese una contraseña</small>
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="fetching">
+            <span class="spinner-border" role="status" aria-hidden="true" *ngIf="fetching"></span>
+            INGRESAR
+          </button>
+          <button type="button" routerLink="/account/register" class="btn btn-secondary">CREAR CUENTA</button>
+          <a routerLink="/account/forgot" class="forget-pass">¿Olvidaste tu contraseña?</a>
+        </div><!-- End .form-footer -->
+      </div><!-- End .col-md-6 -->
+
+    </div><!-- End .row -->
+  </form><!-- End .container -->
+
+  <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->

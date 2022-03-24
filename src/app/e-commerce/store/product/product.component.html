@@ -1,0 +1,107 @@
+<main class="main" *ngIf="product">
+
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a routerLink="/{{storeUrl}}">{{storeUrl}}</a></li>
+        <li class="breadcrumb-item" *ngFor="let category of product.categories">
+          <a routerLink="/{{storeUrl}}/{{category.url ? category.url : category}}">{{category.title ? category.title : category}}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 main-content">
+        <div class="product-single-container product-single-default">
+          <div class="row">
+
+            <div class="col-lg-7 col-md-6 product-single-gallery">
+              <app-product-media-gallery [product]="product"></app-product-media-gallery>
+            </div><!-- End .product-single-gallery -->
+
+            <div class="col-lg-5 col-md-6 product-single-details">
+              <app-product-details [product]="product"
+                                   [productPageSettings]="productPageSettings">
+              </app-product-details>
+
+              <hr class="divider">
+
+              <app-product-actions [productPageSettings]="productPageSettings"
+                                   [product]="product">
+              </app-product-actions>
+
+              <app-product-social-share [socialLinks]="productPageSettings.socialLinks">
+              </app-product-social-share>
+            </div>
+          </div><!-- End .row -->
+        </div><!-- End .product-single-container -->
+
+      </div><!-- End .col-lg-9 -->
+
+      <div class="sidebar-overlay"></div>
+      <div class="sidebar-toggle"><i class="fas fa-sliders-h"></i></div>
+      <aside class="sidebar-product col-lg-3 mobile-sidebar">
+        <div class="sidebar-wrapper">
+
+          <div class="widget widget-featured">
+            <h3 class="widget-title">También Puedes Ver</h3>
+
+            <div class="widget-body">
+              <div class="owl-carousel widget-featured-products">
+                <div class="featured-col" *ngFor="let newProductColumn of newProducts">
+                  <div class="product-default left-details product-widget"
+                       *ngFor="let newProductItem of newProductColumn">
+                    <figure>
+                      <a routerLink="/{{storeUrl}}/{{getCategoryUrl(newProductItem.categories)}}/{{newProductItem.url}}">
+                        <img class="height-small" src="{{newProductItem.images.images[0].url}}">
+                      </a>
+                    </figure>
+                    <div class="product-details">
+                      <h2 class="product-title">
+                        <a routerLink="/{{storeUrl}}/{{getCategoryUrl(newProductItem.categories)}}/{{newProductItem.url}}">{{newProductItem.title}}</a>
+                      </h2>
+                      <div class="price-box">
+                        <span>Regular:</span>
+                        <span class="product-price old-price"> {{newProductItem.price.old | currency: 'S/ '}}</span>
+                        <br>
+
+                        <span class="product-price">Oferta:</span>
+                        <span class="product-price"
+                              [class.strikethrough]="newProductItem.price.offer"
+                              [class.text-muted]="newProductItem.price.offer">
+                          {{newProductItem.price.actual | currency:'S/. '}}
+                        </span>
+                         <br><br>
+                         <span class="product-price color-price"
+                              *ngIf="newProductItem.price.single">Mamá:{{newProductItem.price.single | currency:'S/. '}}</span>
+                         <span class="product-price color-price"
+                              *ngIf="newProductItem.price.singlePather">Un padre:{{newProductItem.price.singlePather | currency:'S/. '}}</span>
+                        <span class="product-price color-price"
+                              *ngIf="newProductItem.price.offer">En pareja:{{newProductItem.price.offer | currency:'S/. '}}</span>
+                      </div><!-- End .price-box -->
+                    </div><!-- End .product-details -->
+                  </div>
+                </div><!-- End .featured-col -->
+              </div><!-- End .widget-featured-slider -->
+            </div><!-- End .widget-body -->
+          </div><!-- End .widget -->
+        </div>
+      </aside><!-- End .col-md-3 -->
+    </div><!-- End .row -->
+
+    <div class="products-section pt-sm">
+      <h2>{{product.booking ? 'Cursos' : 'Productos'}} Relacionados</h2>
+
+      <div class="products-slider owl-carousel owl-theme dots-top">
+        <app-product-card *ngFor="let relatedProduct of categoryRelatedProducts"
+                          [product]="relatedProduct"></app-product-card>
+      </div><!-- End .products-slider -->
+    </div><!-- End .products-section -->
+
+    <div class="mb-lg-4"></div><!-- margin -->
+  </div><!-- End .container -->
+</main><!-- End .main -->

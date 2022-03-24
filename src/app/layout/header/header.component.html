@@ -1,0 +1,43 @@
+<div class="top-notice text-white bg-dark">
+  <div class="container text-center">
+    <h5 class="ls-n-10 mb-0">Te enviamos tus productos <b>GRATIS</b> en compras desde S/ 200.00.
+      <a routerLink="/tienda/productos">¡Compra ya! </a>
+      <small (click)="openModalRestriction()">* Aplican restricciones</small>
+    </h5>
+    <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+  </div><!-- End .container -->
+</div><!-- End .top-notice -->
+
+<header class="header">
+  <div class="header-middle sticky-header">
+    <div class="container">
+      <div class="header-left">
+        <a routerLink="/" class="logo">
+          <img src="/assets/images/logo.png" alt="Porto Logo">
+        </a>
+
+      </div><!-- End .header-left -->
+      <app-header-nav [categoriesServices]="categoriesServices" [categories]="categories" ></app-header-nav>
+      <div class="header-right">
+        <button class="mobile-menu-toggler" type="button">
+          <i class="icon-menu"></i>
+        </button>
+
+        <app-header-account [user]="user"></app-header-account>
+
+        <div class="dropdown cart-dropdown">
+          <a class="dropdown-toggle dropdown-arrow" role="button" data-toggle="dropdown" aria-haspopup="true"
+             aria-expanded="false" data-display="static">
+            <i class="icon-shopping-cart"></i>
+            <span class="cart-count badge-circle">{{totalProducts | async}}</span>
+          </a>
+
+          <app-header-cart [totalProducts]="totalProducts"
+                           [products]="products"
+                           [totalPrice]="totalPrice"></app-header-cart>
+          <!-- End .dropdown-menu -->
+        </div><!-- End .dropdown -->
+      </div><!-- End .header-right -->
+    </div><!-- End .container -->
+  </div><!-- End .header-middle -->
+</header><!-- End .header -->

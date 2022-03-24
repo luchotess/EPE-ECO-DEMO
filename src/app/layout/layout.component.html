@@ -1,0 +1,35 @@
+<div class="page-wrapper" [class.popup-active]="_AppService.isModalBeingShow">
+
+  <app-header></app-header>
+
+  <ng-content></ng-content>
+
+  <app-footer></app-footer>
+
+</div>
+
+
+<app-mobile-navigation></app-mobile-navigation>
+
+<div class="overlay" *ngIf="_AppService.isModalBeingShow" (click)="_AppService.hideAllModals()"></div>
+
+<app-newsletter *ngIf="_AppService.showPopup"></app-newsletter>
+<app-insurance *ngIf="_AppService.showPopupinsurance"></app-insurance>
+<app-alert-empty></app-alert-empty>
+<app-alert-checkout></app-alert-checkout>
+<app-restrictions-modal></app-restrictions-modal>
+<app-shipping-modal></app-shipping-modal>
+<app-detail-order></app-detail-order>
+
+<app-add-to-cart></app-add-to-cart>
+
+<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+<a class="redes facebook" target="_blank" href="https://www.facebook.com/Escuela-para-Embarazadas-141564679232115"
+   title="Top" role="button"><i class="icon-facebook"></i></a>
+<a class="redes instagram" target="_blank" href="https://www.instagram.com/escuela_para_embarazadas/" title="Top"
+   role="button"><i class="icon-instagram"></i></a>
+<a class="redes whatsapp" target="_blank"
+   href="https://api.whatsapp.com/send?phone=+51992276497&text=Hola%20EPE,%20quisiera%20saber%20mas%20informacion%20"
+   title="Top" role="button"><i class="fab fa-whatsapp"></i></a>
+<a class="redes tiktok" target="_blank" href="https://www.tiktok.com/@escuelaparaembarazadas?lang=es" title="Top"
+   role="button"><i class="fab fa-tiktok"></i></a>

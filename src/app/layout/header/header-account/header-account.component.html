@@ -1,0 +1,15 @@
+<a routerLink="/account/login" class="header-icon"><i class="icon-user-2"></i></a>
+<div class="user-welcome-container" *ngIf="user | async">
+  <span class="welcome-message">Hola, {{ (user | async).name }}.</span>
+  <div>
+    <span class="logout-btn mr-3" routerLink="/account/login"><b>Ver Cuenta</b></span>
+    <span class="logout-btn" (click)="logout()"><b>Cerrar Sesión</b></span>
+  </div>
+</div>
+
+<div class="user-welcome-container" *ngIf="!(user | async)">
+  <span class="welcome-message">Hola, visitante.</span>
+  <span class="logout-btn" (click)="login()"><b>Ingresar</b></span>
+</div>
+
+

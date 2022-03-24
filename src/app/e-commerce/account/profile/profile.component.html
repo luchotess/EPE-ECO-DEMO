@@ -1,0 +1,40 @@
+
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a routerLink="/account/profile">Cuenta</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <div class="container">
+    <div class="row row-sparse">
+      <div class="col-lg-9 order-lg-last dashboard-content">
+        <app-profile-dashboard *ngIf="currentTab === 'dashboard'" [user]="user"></app-profile-dashboard>
+        <app-profile-addresses *ngIf="currentTab === 'addresses'" [user]="user"></app-profile-addresses>
+        <app-profile-orders *ngIf="currentTab === 'orders'" [user]="user"></app-profile-orders>
+        <app-profile-courses *ngIf="currentTab === 'courses'" [user]="user"></app-profile-courses>
+        <app-profile-subscriptions *ngIf="currentTab === 'subscriptions'" [user]="user"></app-profile-subscriptions>
+      </div><!-- End .col-lg-9 -->
+
+      <aside class="sidebar col-lg-3">
+        <div class="widget widget-dashboard">
+          <h3 class="widget-title">Mi Cuenta</h3>
+
+          <ul class="list">
+            <li [class.active]="currentTab==='dashboard'"><a (click)="show('dashboard')">Panel Principal</a></li>
+            <li [class.active]="currentTab==='addresses'"><a (click)="show('addresses')">Direcciones</a></li>
+            <li [class.active]="currentTab==='orders'"><a (click)="show('orders')">Mis Órdenes</a></li>
+            <li [class.active]="currentTab==='courses'"><a (click)="show('courses')">Mis Cursos</a></li>
+            <li [class.active]="currentTab==='subscriptions'"><a (click)="show('subscriptions')">Suscripciones</a></li>
+          </ul>
+        </div><!-- End .widget -->
+      </aside><!-- End .col-lg-3 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->

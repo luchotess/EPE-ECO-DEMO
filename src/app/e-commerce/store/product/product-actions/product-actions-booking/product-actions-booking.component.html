@@ -1,0 +1,19 @@
+<div class="product-action" *ngIf="product.booking">
+  <app-product-details-booking-schedule class="schedule"
+                                        *ngIf="product.booking && productPageSettings.showSchedule">
+  </app-product-details-booking-schedule>
+
+  <button class="btn btn-dark add-cart" *ngIf="bookingData.registerStep === null && product.availableToSell"
+          title="Reservar cita" (click)="book()">
+    {{ product.book ? 'Regístrate aquí' : 'Reserva cita' }}
+  </button>
+
+  <app-product-actions-booking-create-account *ngIf="bookingData.needsAccount && bookingData.registerStep === null"
+                                              [bookingData]="bookingData">
+  </app-product-actions-booking-create-account>
+
+  <app-product-actions-booking-form [bookingData]="bookingData"
+                                    [product]="product"
+                                    [user]="user">
+  </app-product-actions-booking-form>
+</div>

@@ -1,0 +1,16 @@
+<section class="container">
+  <h2 class="section-title ls-n-10 text-center pt-2 m-b-4">Seguros con los que trabajamos</h2>
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-4" *ngFor="let insurance of insurances">
+      <a class="insurance" (click)="popupInsurance(insurance.key)" >
+        <figure>
+          <img class="insurance-img" src="{{ insurance.image }}">
+        </figure>
+        <div class="category-content">
+          <h3>{{ insurance.title }}</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<div class="dropdown-menu">
+  <div class="dropdownmenu-wrapper">
+    <div class="dropdown-cart-header">
+      <span>{{totalProducts | async}} Productos</span>
+
+      <a routerLink="/cart" class="float-right">Ver Carrito</a>
+    </div><!-- End .dropdown-cart-header -->
+    <div class="dropdown-cart-products">
+      <div class="product" *ngFor="let product of products | async">
+        <div class="product-details">
+          <h4 class="product-title">
+            <a routerLink="product">{{product.item.title}}</a>
+          </h4>
+
+          <span class="cart-product-info">
+                      <span class="cart-product-qty">{{product.qty}}</span>
+                      x
+            {{product.item.price.offer ? (product.item.price.offer | currency: 'S/ ') : (product.item.price.actual | currency: 'S/ ')}}
+                    </span>
+        </div><!-- End .product-details -->
+
+        <figure class="product-image-container">
+          <a routerLink="product.item.html" class="product-image">
+            <img src="{{product.item.images.images[0].url}}" alt="product" width="80" height="67">
+          </a>
+          <a class="btn-remove icon-cancel" (click)="removeProduct(product)" title="Remove Product"></a>
+        </figure>
+      </div><!-- End .product -->
+    </div><!-- End .cart-product -->
+
+    <div class="dropdown-cart-total">
+      <span>Total</span>
+
+      <span class="cart-total-price float-right">{{ totalPrice | async | currency: 'S/ '}}</span>
+    </div><!-- End .dropdown-cart-total -->
+
+    <div class="dropdown-cart-action">
+      <a routerLink="/cart" class="btn btn-primary btn-block">Comprar</a>
+    </div><!-- End .dropdown-cart-total -->
+  </div><!-- End .dropdownmenu-wrapper -->
+</div>

@@ -1,0 +1,14 @@
+<div class="product-action">
+
+  <div class="product-single-qty">
+    <input class="horizontal-quantity form-control" type="text" #qty>
+  </div>
+
+  <button class="btn btn-dark add-cart" title="Add to Cart" (click)="addToCart(qty)">
+    Agregar a Carrito
+  </button>
+</div>
+
+<h5 class="alert alert-success mt-1" role="alert" *ngIf="productPageSettings.productAdded">
+  ¡Agregado! <a routerLink="/cart" class="btn btn-success btn-sm btn-add-to-cart">Ver carrito</a>
+</h5>

@@ -1,0 +1,40 @@
+<h2 class="text-primary">Suscripciones</h2>
+<div class="mb-4"></div><!-- margin -->
+
+<div class="row row-sparse">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Suscripciones
+      </div><!-- End .card-header -->
+
+      <div class="card-body">
+        <table class="order-table" *ngIf="subscriptions.length > 0; else noData">
+          <tr>
+            <th>
+              Código de Referencia
+            </th>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Productos
+            </th>
+            <th>
+              Total
+            </th>
+            <th>
+              Estado
+            </th>
+          </tr>
+          <tr *ngFor="let suscription of subscriptions">
+          </tr>
+        </table>
+
+        <ng-template #noData>
+          <h6 class="text-black-50">No tienes direcciones registradas aún con nosotros.</h6>
+        </ng-template>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+</div><!-- End .row -->

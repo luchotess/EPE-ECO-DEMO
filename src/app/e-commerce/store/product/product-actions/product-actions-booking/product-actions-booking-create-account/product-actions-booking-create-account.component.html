@@ -1,0 +1,45 @@
+<form (ngSubmit)="saveLogin()">
+  <div autocomplete="off" [formGroup]="inscriptionForm">
+    <br>
+    <h5>
+      Pare registrarte en el curso necesitas tener una cuenta con nosotros. <br>
+      Solo necesitamos tus datos. ¡Crear una cuenta es totalmente gratuito!
+      <br><br>
+      Si ya tienes una cuenta <a routerLink="/account/login">Ingresa aquí.</a>
+    </h5>
+
+    <div>
+      <input name="name" type="text" class="form-control" placeholder="Nombres"
+             formControlName="name" [class.is-invalid]="nameNotValid" [(ngModel)]="user.name">
+      <small *ngIf="nameNotValid" class="text-danger">Ingrese su nombre</small>
+      <input name="lastname" type="text" class="form-control" placeholder="Apellidos"
+             formControlName="lastname" [class.is-invalid]="lastnameNotValid"
+             [(ngModel)]="user.lastname">
+      <small *ngIf="lastnameNotValid" class="text-danger">Ingrese su apellido</small>
+      <input name="email" type="email" class="form-control" placeholder="Correo Electrónico"
+             formControlName="email" [class.is-invalid]="emailNotValid" [(ngModel)]="user.email">
+      <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+      <input name="phone" type="tel" class="form-control" placeholder="Número Celular"
+             formControlName="phone" [class.is-invalid]="phoneNotValid" [(ngModel)]="user.phone">
+      <small *ngIf="phoneNotValid" class="text-danger">Ingrese su celular</small>
+      <input name="dni" type="tel" class="form-control" placeholder="DNI/CE" formControlName="dni"
+             [class.is-invalid]="dniNotValid" [(ngModel)]="user.dni">
+      <small *ngIf="dniNotValid" class="text-danger">Ingrese su DNI o CE</small>
+      <input name="password" type="password" class="form-control" placeholder="Contraseña"
+             formControlName="password" [class.is-invalid]="passwordNotValid"
+             [(ngModel)]="user.password">
+      <small *ngIf="passwordNotValid" class="text-danger">Ingrese su contraseña</small>
+      <input name="password2" type="password" class="form-control"
+             placeholder="Confirmar contraseña" formControlName="password2"
+             [class.is-invalid]="password2NotValid">
+      <small *ngIf="password2NotValid" class="text-danger">Confirme su contraseña</small>
+    </div>
+  </div>
+  <div class="form-footer">
+    <button class="btn btn-primary" type="submit" [disabled]="fetching">
+      <span class="spinner-border" role="status" aria-hidden="true" *ngIf="fetching"></span>
+      Crear cuenta
+    </button>
+    <p *ngIf="alertSuccess" class="text-danger"> * Puede que alguien más ya uso estos datos.</p>
+  </div><!-- End .form-footer -->
+</form>

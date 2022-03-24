@@ -1,0 +1,67 @@
+<nav class="main-nav font2">
+  <ul class="menu">
+    <li>
+      <a routerLink="/">Inicio</a>
+    </li>
+    <li>
+      <a routerLink="/tienda/cursos">Cursos</a>
+      <div class="megamenu megamenu-fixed-width megamenu-3cols">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="submenu">
+              <li *ngFor="let category of categoriesServices">
+                <a *ngIf="(category.parentId == 9)" routerLink="/tienda/{{storeUrl}}/{{category.url}}">
+                  {{category.title}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- End .megamenu -->
+    </li>
+    <li>
+      <a routerLink="/tienda/servicios/">Servicios</a>
+      <div class="megamenu megamenu-fixed-width">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="submenu">
+              <li *ngFor="let category of categoriesServices">
+                <a *ngIf="(category.parentId == 12)" routerLink="/tienda/{{storeUrl}}/{{category.url}}">
+                  {{category.title}}
+                </a>
+              </li>
+            </ul>
+          </div><!-- End .col-lg-4 -->
+        </div><!-- End .row -->
+      </div><!-- End .megamenu -->
+    </li>
+    <li>
+      <a routerLink="/tienda/productos/">Productos</a>
+      <div class="megamenu megamenu-fixed-width">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="submenu">
+              <li *ngFor="let category of categories">
+                <a *ngIf="(!category.parentId)" routerLink="/tienda/{{storeUrl}}/{{category.url}}">
+                  {{category.title}}
+                </a>
+              </li>
+            </ul>
+          </div><!-- End .col-lg-4 -->
+        </div><!-- End .row -->
+      </div><!-- End .megamenu -->
+    </li>
+    <li>
+      <a routerLink="/static/nosotros">Nosotros</a>
+    </li>
+    <li>
+      <a routerLink="/static/promo">Promociones</a>
+    </li>
+    <li>
+      <a routerLink="/blog">Blog</a>
+    </li>
+    <li>
+      <a routerLink="/static/contact">Contacto</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+button.calendar, button.calendar:active {
+  width: 2.75rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position: center;
+}
+
+.ngb-dp-day {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.ngb-dp-day > div {
+  width: 4rem !important;
+  height: 4rem !important;
+  line-height: 4rem !important;
+  font-size: 1.7rem;
+}
+
+.ngb-dp-weekday {
+  width: 4rem !important;
+}
+
+ngb-datepicker-navigation-select .custom-select {
+   font-size: 1.6rem !important;
+   line-height: 1.6rem !important;
+   height: 29px !important;
+ }
+
+.ngb-dp-weekday {
+  height: 30px !important;
+  font-size: 1.6rem;
+  padding: 5px 0;
+}
+
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.product-default figure img {
+  height: 270px;
+  object-fit: cover;
+}
+
+.product-slider-container, .prod-thumbnail.owl-dots {
+  max-width: 612px;
+}
+
+.product-item {
+  max-height: 408px;
+}
+
+.product-slider-container .owl-carousel .owl-item img {
+  width: 100%;
+  //object-fit: cover;
+  max-height: 408px;
+}
+
+.prod-thumbnail img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 132px;
+}
+
+.products-category-color {
+  color: rgb(171 171 171);
+}
+
+.product-single-details .old-price + .product-price {
+  margin-left: 0;
+}
+
+.old-price {
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.product-default figure img:first-child {
+  opacity: 1;
+}
+
+.height-small {
+  height: 120px !important;
+}
+
+.zoomWindowContainer div {
+  background-color: white;
+}
+.product-single-image {
+  min-height: 396.13px !important;
+}
+
+.main-nav .menu > li > a {
+  color: #ababab;
+}
+
+.sidebar-shop .widget-title {
+  font-family: "Open Sans", sans-serif;
+}
+
+
+.carousel {
+  z-index: 10 !important;
+
+  .carousel-arrows > .carousel-arrow {
+    background-color: #054F70 !important;
+  }
+}
+
+.owl-carousel.show-nav-hover .owl-nav {
+  opacity: 1;
+}
+
+.popup-active {
+  filter: blur(4px);
+}
+
+a, .pointer {
+  cursor: pointer;
+}
+
+.hover-u:hover {
+  text-decoration: underline;
+}
+
+.inner-icon figure .btn-icon {
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.no-max-width {
+  max-width: none !important;
+}

@@ -1,0 +1,38 @@
+<h5>Horario</h5>
+<small>Próximo Inicio: <strong>27 de agosto</strong></small>
+<table class="table mb-5">
+  <thead>
+  <tr>
+    <th>Dia</th>
+    <th>Hora</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Lun - Mie</td>
+    <td>10am - 11am</td>
+    <td><span class="badge badge-success">Disponible</span></td>
+  </tr>
+  <tr>
+    <td>Lun - Mie</td>
+    <td>2pm / 3pm</td>
+    <td><span class="badge badge-light">Agotado</span></td>
+  </tr>
+  </tbody>
+</table>
+
+<h4 class="d-block">O Elige una fecha personalizada</h4>
+
+<form class="form-inline mb-2">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd"
+             name="dp" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                type="button"></button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,71 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    jobs: 
+    - job: BuildJob
+      steps:
+        - task: NodeTool@0
+          inputs:
+            versionSpec: '12.x'
+          displayName: 'Install Node.js'
+
+        - script: |
+            npm install
+            npm run build:prod
+          displayName: 'npm install and build'
+
+        - task: CopyFiles@2
+          inputs:
+            Contents: 'dist/**'
+            TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+        - task: PublishBuildArtifacts@1
+          inputs: 
+            PathtoPublish: $(Build.ArtifactStagingDirectory)
+            ArtifactName: 'www'
+
+  - stage: BetaDeploy
+    dependsOn:
+      - Build
+    jobs:
+    - deployment: S3Deploy
+      displayName: Beta Deploy
+      environment: EPE Beta Environment
+      strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: S3Upload@1
+                inputs:
+                  awsCredentials: 'Azure AWS'
+                  regionName: 'us-east-1'
+                  bucketName: 'beta.escuelaparaembarazadas.com'
+                  sourceFolder: '/home/vsts/work/1/www/dist'
+                  globExpressions: '**'
+                  filesAcl: 'public-read'
+                  createBucket: true
+
+  - stage: ProdDeploy
+    dependsOn:
+      - BetaDeploy
+    jobs:
+      - deployment: S3Deploy
+        displayName: Production Deploy
+        environment: EPE Production Environment
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: S3Upload@1
+                  inputs:
+                    awsCredentials: 'Azure AWS'
+                    regionName: 'us-east-1'
+                    bucketName: 'escuelaparaembarazadas.com'
+                    sourceFolder: '/home/vsts/work/1/www/dist'
+                    globExpressions: '**'
+                    filesAcl: 'public-read'

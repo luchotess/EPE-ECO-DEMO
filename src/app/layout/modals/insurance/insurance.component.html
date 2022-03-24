@@ -1,0 +1,57 @@
+<div class="overlay">
+  <div class="newsletter-popup" id="newsletter-popup-form">
+    <div class="close pointer" (click)="popupInsuranceClose()"><i class="fas fa-times-circle"></i></div>
+    <div class="newsletter-popup-content">
+      <form *ngIf="!messageOk" action="#" (ngSubmit)="save()">
+        <h2>Descubre si tu seguro cubre nuestros cursos </h2>
+        <div autocomplete="on" class="col" [formGroup]="insuranceForm">
+          <div class="input-group">
+            <input
+                    type="text"
+                    class="form-control"
+                    ngModel
+                    required
+                    id="insurance-name"
+                    name="insurancename"
+                    formControlName="insurancename"
+                    [class.is-invalid]="nameNotValid" placeholder="Nombre">
+          </div>
+          <small *ngIf="nameNotValid" class="text-danger">Ingrese su nombre</small>
+          <div class="input-group">
+            <input
+                    type="text"
+                    class="form-control"
+                    ngModel
+                    required
+                    id="insurance-dni"
+                    name="insurancedni"
+                    formControlName="insurancedni"
+                    [class.is-invalid]="dniNotValid"
+                    placeholder="DNI">
+          </div>
+          <small *ngIf="dniNotValid" class="text-danger">Ingrese su DNI</small>
+          <div class="input-group">
+            <input
+                    type="email"
+                    class="form-control"
+                    ngModel
+                    required
+                    id="insurance-email"
+                    name="insuranceemail"
+                    formControlName="insuranceemail"
+                    [class.is-invalid]="emailNotValid"
+                    placeholder="Correo electrónico">
+          </div>
+          <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+          <div class="input-group">
+            <button type="submit" class="btn" value="consulta">Consultar</button>
+          </div><!-- End .from-group -->
+        </div>
+      </form>
+      <div class="message" *ngIf="messageOk">
+        <p>¡Listo! Te estaremos enviando la información por correo.</p>
+        <button (click)="popupInsuranceClose()" type="submit" class="btn btn-dark">Continuar</button>
+      </div>
+    </div><!-- End .newsletter-popup-content -->
+  </div><!-- End .newsletter-popup -->
+</div>

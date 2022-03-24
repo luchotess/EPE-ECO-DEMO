@@ -1,0 +1,14 @@
+<app-product-actions-booking [product]="product"
+                             [productPageSettings]="productPageSettings">
+</app-product-actions-booking>
+
+<app-product-actions-add-to-cart *ngIf="product.availableToSell !== false && !product.booking"
+                                 [productPageSettings]="productPageSettings"
+                                 [product]="product">
+
+</app-product-actions-add-to-cart>
+
+<app-product-actions-contact-seller [sellerContactInfo]="productPageSettings.sellerContactInfo">
+</app-product-actions-contact-seller>
+
+

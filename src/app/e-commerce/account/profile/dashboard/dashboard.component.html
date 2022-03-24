@@ -1,0 +1,93 @@
+<h2 class="text-primary">Panel Principal</h2>
+
+<!--<div class="alert alert-success alert-intro" role="alert">-->
+<!--  Su perfil se creó correctamente.-->
+<!--</div>&lt;!&ndash; End .alert &ndash;&gt;-->
+
+<div class="mb-4"></div><!-- margin -->
+
+<h3>Información de la Cuenta</h3>
+
+<div class="row row-sparse">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Datos Personales
+        <a (click)="openEdit1()" class="card-edit font-edit"><i class="fas fa-edit"></i>Editar</a>
+      </div><!-- End .card-header -->
+      <div class="card-body">
+        <p *ngIf="!showEditar1">
+          <strong>Nombres: </strong>{{user.name}}<br>
+          <strong>Apellidos: </strong>{{user.lastname}}<br>
+          <strong>Correo: </strong>{{user.email}}<br>
+          <strong>Teléfono: </strong>{{user.phone}}<br>
+          <strong>DNI: </strong>{{user.data.dni}}<br>
+          <strong>Contraseña: </strong> ******
+        </p>
+        <form *ngIf="showEditar1" (ngSubmit)="updateForm()">
+          <div class="close pointer m-2" (click)="closeEdit1()"><i class="far fa-times-circle"></i></div>
+          <div [formGroup]="form">
+            <input name="name" type="text" class="form-control" formControlName="name" placeholder="Nombres">
+            <input name="lastname" type="text" class="form-control" formControlName="lastname" placeholder="Apellidos">
+            <input name="email" type="text" class="form-control" disabled formControlName="email" placeholder="Email">
+            <input name="password" type="password" class="form-control" formControlName="password" placeholder="Nueva Contraseña">
+            <input name="dni" type="dni" class="form-control" formControlName="dni" placeholder="DNI">
+            <input name="phone" type="tel" class="form-control" formControlName="phone" placeholder="Celular">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </div>
+        </form>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Suscripciones
+      </div><!-- End .card-header -->
+
+      <div class="card-body">
+        <p>
+          No tienes ninguna suscripción activa.
+        </p>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+</div><!-- End .row -->
+
+<div class="card">
+  <div class="card-header">
+    Direcciones y Delivery
+  </div><!-- End .card-header -->
+
+  <div class="card-body">
+    <div class="row row-sparse">
+      <div class="col-md-6">
+        <h4 class="">Dirección principal para delivery</h4>
+        <address>
+          No has seleccionado una dirección principal para delivery.<br>
+          <a class="font-edit" (click)="openEdit()"><i class="fas fa-edit"></i>Editar</a>
+
+          <form *ngIf="showEditar" (ngSubmit)="closeEdit()">
+            <input placeholder="Av/Ca/Jr" name="address" type="text" class="form-control">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </form>
+
+        </address>
+      </div>
+      <div class="col-md-6">
+        <h4 class="">Dirección principal para facturación</h4>
+        <address>
+          No has seleccionado una dirección principal para facturación.<br>
+          <a (click)="openEdit2()" class="font-edit"><i class="fas fa-edit"></i>Editar</a>
+
+          <form *ngIf="showEditar2" (ngSubmit)="closeEdit2()">
+            <input placeholder="Av/Ca/Jr" name="address" type="text" class="form-control">
+            <button class="btn btn-dark" type="submit">Guardar</button>
+          </form>
+
+        </address>
+      </div>
+    </div>
+  </div><!-- End .card-body -->
+</div><!-- End .card -->

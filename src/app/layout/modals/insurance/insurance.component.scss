@@ -1,0 +1,56 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all .3s;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.newsletter-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: initial;
+  background-size: cover;
+  z-index: 20000;
+  background-image: url(/assets/images/slider/slide1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.newsletter-popup-content {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+}
+
+.newsletter-popup-content .btn {
+  text-align: center;
+  background: #12ABB5;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.newsletter-popup h2 {
+  color: #12ABB5;
+}
+
+.message {
+  text-align: center;
+  font-size: 29px;
+  font-weight: bold;
+  color: #12ABB5;
+}
+
+.input-group{
+  margin-top: 1rem;
+}

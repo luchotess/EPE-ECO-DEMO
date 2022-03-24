@@ -1,0 +1,59 @@
+<form action="#">
+  <div class="form-group required-field">
+    <label>Nombre</label>
+    <input type="text" class="form-control" required>
+  </div><!-- End .form-group -->
+
+  <div class="form-group required-field">
+    <label>Apellidos</label>
+    <input type="text" class="form-control" required>
+  </div><!-- End .form-group -->
+
+  <div class="form-group required-field">
+    <label>Dirección</label>
+    <input type="text" class="form-control" required>
+    <input type="text" class="form-control" required>
+  </div><!-- End .form-group -->
+
+  <div class="form-group required-field">
+    <label>Ciudad  </label>
+    <input type="text" class="form-control" required>
+  </div><!-- End .form-group -->
+
+  <div class="form-group">
+    <label>Provincia</label>
+    <div class="select-custom">
+      <select class="form-control">
+        <option value="CA">Lima</option>
+        <option value="TX">Otros</option>
+      </select>
+    </div><!-- End .select-custom -->
+  </div><!-- End .form-group -->
+
+  <div class="form-group">
+    <label>País</label>
+    <div class="select-custom">
+      <select class="form-control">
+        <option value="USA">Perú</option>
+        <option value="Turkey">Chile</option>
+        <option value="China">Brazil</option>
+        <option value="Germany">Ecuador</option>
+      </select>
+    </div><!-- End .select-custom -->
+  </div><!-- End .form-group -->
+
+  <div class="form-group required-field">
+    <label>Teléfono</label>
+    <div class="form-control-tooltip">
+      <input type="tel" class="form-control" required>
+      <span class="input-tooltip" data-toggle="tooltip" title="For delivery questions." data-placement="right"><i class="icon-question-circle"></i></span>
+    </div><!-- End .form-control-tooltip -->
+  </div><!-- End .form-group -->
+
+  <div class="form-group-custom-control">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="address-save">
+      <label class="custom-control-label" for="address-save">Guardar Dirección</label>
+    </div><!-- End .custom-checkbox -->
+  </div><!-- End .form-group -->
+</form>

@@ -1,0 +1,38 @@
+.footer {
+  color: #12ABB5;
+  background-color: #f4f4f4;
+}
+
+footer .widget-title {
+  color: #baa1c1
+}
+
+footer .contact-widget a, footer p, footer {
+  color: #ababab !important;
+  font-weight: bold;
+
+  .strong {
+    color: #5a6268;
+  }
+}
+.email-epe {
+  display: flex !important;
+  flex-direction: row;
+  a {
+    padding-left: 30px;
+  }
+}
+
+// TODO limit 16 products
+.l-products{
+  height: 264px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (max-width: 575px) {
+    height: auto;
+    flex-wrap: nowrap;
+  }
+}
+

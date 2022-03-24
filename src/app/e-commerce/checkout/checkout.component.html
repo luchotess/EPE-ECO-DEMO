@@ -1,0 +1,232 @@
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <form class="container" (ngSubmit)="save()">
+    <ul class="checkout-progress-bar">
+      <li routerLink="/cart">
+        <span>Carrito</span>
+      </li>
+      <li class="active">
+        <span>Datos de Envío</span>
+      </li>
+      <li (click)="goToPayment()">
+        <span>Resumen y Pago</span>
+      </li>
+    </ul>
+    <div class="row row-sparse">
+      <div class="col-lg-8 padding-right-lg">
+        <ul class="checkout-steps">
+          <li>
+            <h2 class="step-title">Datos de Envío</h2>
+
+            <div class="user-addresses flex-wrap">
+
+              <div class="address-container"
+                   *ngIf="!localUser || !localUser.addresses || localUser.addresses.length === 0">
+                <h5>
+                  No tienes direcciones guardadas con nosotros.
+                    <a routerLink="/account/register">
+                      <b>¡Haz click aquí para crear una cuenta con nosotros en menos de 1 minuto!</b>
+                    </a>
+                </h5>
+              </div>
+
+              <ng-container *ngIf="localUser && localUser.addresses && localUser.addresses.length > 0">
+                <div class="address-container"
+                     [class.selected]="index === selectedAddress"
+                     (click)="selectAddress(index)"
+                     *ngFor="let address of localUser.addresses; let index = index">
+                  <div class="check"><i class="fa fa-check"></i></div>
+                  <div class="edit" (click)="editAddress(index)"><i class="fa fa-edit"></i></div>
+                  <div class="delete" (click)="deleteAddress(index)"><i class="fa fa-trash"></i></div>
+                  <h5>
+                    {{ address.name }} <br/>
+                    {{ address.lastname }} <br/>
+                    {{ address.dni }} <br/>
+                    {{ address.email }} <br/>
+                    <br>
+                    {{ address.address }} <br/>
+                    {{ address.phone }} <br/>
+                    {{ address.district }} <br/>
+                    {{ address.department }} <br/>
+                    {{ address.country }} <br/>
+                  </h5>
+                </div>
+              </ng-container>
+
+              <div class="address-container new-address"
+                   [class.disabled]="editingAddress"
+                   (click)="addNewAddress()">
+                <h5><b>+ Agregar dirección</b></h5>
+              </div>
+            </div>
+
+            <div [class.d-none]="!editingAddress">
+              <div class="row mt-5">
+                <div autocomplete="off" class="col-6" [formGroup]="shippingAddressForm">
+                  <div class="form-group required-field">
+                    <label>Nombre</label>
+                    <input placeholder="Nombre" name="name" type="text" class="form-control" formControlName="name"
+                           [class.is-invalid]="nameNotValid">
+                    <small *ngIf="nameNotValid" class="text-danger">Ingrese su nombre</small>
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group required-field">
+                    <label>Apellidos</label>
+                    <input placeholder="Apellidos" name="lastname" type="text" class="form-control"
+                           formControlName="lastname" [class.is-invalid]="lastnameNotValid">
+                    <small *ngIf="lastnameNotValid" class="text-danger">Ingrese su apellido</small>
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group required-field">
+                    <label>DNI</label>
+                    <input placeholder="DNI" name="dni" type="text" class="form-control"
+                           formControlName="dni" [class.is-invalid]="dniNotValid">
+                    <small *ngIf="dniNotValid" class="text-danger">Ingrese tu DNI</small>
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group required-field">
+                    <label>Correo Electrónico</label>
+                    <input placeholder="example@example.com" name="email" type="email" class="form-control"
+                           formControlName="email" [class.is-invalid]="emailNotValid">
+                    <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group required-field">
+                    <label>Dirección</label>
+                    <input placeholder="Av/Ca/Jr" name="address" type="text" class="form-control"
+                           formControlName="address" [class.is-invalid]="addressNotValid">
+                    <small *ngIf="addressNotValid" class="text-danger">Ingrese su dirección</small>
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group">
+                    <label>Departamento</label>
+                    <div class="select-custom">
+                      <select class="form-control" name="department" formControlName="department"
+                              [class.is-invalid]="departamentNotValid">
+                        <option value="Lima">Lima</option>
+                        <option value="Provincia">Provincia</option>
+                      </select>
+                      <small *ngIf="departamentNotValid" class="text-danger">Ingrese su departamento</small>
+                    </div><!-- End .select-custom -->
+                  </div><!-- End .form-group -->
+                  <div class="form-group">
+                    <label>Distrito</label>
+                    <div class="select-custom">
+                      <select class="form-control" formControlName="district" name="district"
+                              [class.is-invalid]="districtNotValid">
+                        <option *ngFor="let district of districts"
+                                [value]="district.value">{{ district.label }}</option>
+                      </select>
+                      <small *ngIf="districtNotValid" class="text-danger">Ingrese su distrito</small>
+                    </div><!-- End .select-custom -->
+                  </div><!-- End .form-group -->
+                </div>
+                <div autocomplete="off" class="col-6" [formGroup]="shippingAddressForm">
+                  <div class="form-group">
+                    <label>País</label>
+                    <div class="select-custom">
+                      <select class="form-control" name="country" formControlName="country"
+                              [class.is-invalid]="countryNotValid">
+                        <option value="Perú">Perú</option>
+                        <option disabled="disabled" value="Chile">Chile</option>
+                        <option disabled="disabled" value="Brazil">Brazil</option>
+                        <option disabled="disabled" value="Ecuador">Ecuador</option>
+                      </select>
+                      <small *ngIf="countryNotValid" class="text-danger">Ingrese el pais</small>
+                    </div><!-- End .select-custom -->
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group required-field">
+                    <label>Teléfono</label>
+                    <div class="form-control-tooltip">
+                      <input placeholder="Teléfono" name="phone" type="tel" class="form-control" formControlName="phone"
+                             [class.is-invalid]="phoneNotValid">
+                      <small *ngIf="phoneNotValid" class="text-danger">Ingrese su teléfono</small>
+                      <span class="input-tooltip" data-toggle="tooltip" title="For delivery questions."
+                            data-placement="right"><i class="icon-question-circle"></i></span>
+                    </div><!-- End .form-control-tooltip -->
+                  </div><!-- End .form-group -->
+
+                  <div class="form-group-custom-control">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="address-save">
+                      <!--                    <label class="custom-control-label" for="address-save">Guardar Dirección</label>-->
+                    </div><!-- End .custom-checkbox -->
+                  </div><!-- End .form-group -->
+                </div>
+
+                <div class="button-wrapper p-3">
+                  <button type="button" class="btn btn-info mr-3" (click)="saveAddress()">
+                    Guardar Dirección
+                  </button>
+                  <button type="button" (click)="cancelNewAddress()" class="btn btn-outline-secondary">
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <app-checkout-shipping-method [shippingAddressForm]="shippingAddressForm"
+                                          [selectedAddress]="selectedAddress"
+                                          [getShippingLabel]="getShippingLabel"
+                                          [shippingMethods]="shippingMethods">
+            </app-checkout-shipping-method>
+          </li>
+        </ul>
+      </div><!-- End .col-lg-8 -->
+
+      <div class="col-lg-4">
+        <div class="order-summary">
+          <h3>Resumen</h3>
+
+          <h4>
+            <a data-toggle="collapse" href="#order-cart-section" class="collapsed" role="button" aria-expanded="false"
+               aria-controls="order-cart-section">{{totalProducts | async}} productos en carrito</a>
+          </h4>
+
+          <div class="collapse show" id="order-cart-section">
+            <app-checkout-order-cart [products]="products"
+                                     [totalPrice]="totalPrice"
+                                     [getTotalPriceByCartProduct]="getTotalPriceByCartProduct"
+                                     [totalDiscount]="totalDiscount"
+                                     [getShippingCost]="getShippingCost"
+                                     [shippingAddressForm]="shippingAddressForm"
+                                     [selectedAddress]="selectedAddress">
+            </app-checkout-order-cart>
+          </div><!-- End #order-cart-section -->
+        </div><!-- End .order-summary -->
+      </div><!-- End .col-lg-4 -->
+    </div><!-- End .row -->
+
+    <div class="row row-sparse">
+      <div class="col-lg-8">
+        <div class="checkout-steps-action">
+          <a class="terms" (click)="openModalRestriction()">Al ir al siguiente paso acepto los <span>*Términos y condiciones de la página.</span></a>
+        </div><!-- End .checkout-steps-action -->
+        <div class="checkout-steps-action">
+          <button type="submit" class="btn btn-primary float-right position-relative hover-trigger"
+                  [disabled]="selectedAddress === null || !shippingAddressForm.controls.shippingMethod.value">
+            Ir a Resumen y Pago
+
+            <div class="hover-info"
+                 *ngIf="selectedAddress === null || !shippingAddressForm.controls.shippingMethod.value">
+              Debes seleccionar una dirección primero.
+            </div>
+          </button>
+        </div><!-- End .checkout-steps-action -->
+      </div><!-- End .col-lg-8 -->
+    </div><!-- End .row -->
+  </form><!-- End .container -->
+
+  <div class="mb-6"></div><!-- margin -->
+</main><!-- End .main -->

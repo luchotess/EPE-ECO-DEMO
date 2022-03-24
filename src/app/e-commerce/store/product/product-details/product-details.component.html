@@ -1,0 +1,21 @@
+<h1 class="product-title">{{product.title}}</h1>
+
+<hr class="short-divider">
+
+<app-product-details-price [price]="product.price"></app-product-details-price>
+
+<app-product-details-variations
+        *ngIf="product.variations"
+        [productPageSettings]="productPageSettings"
+        [variations]="product.variations">
+</app-product-details-variations>
+
+<app-product-details-stock
+        [productPageSettings]="productPageSettings"
+        [product]="product"
+        [stockWarningQty]="5">
+</app-product-details-stock>
+
+<app-product-details-description [product]="product"></app-product-details-description>
+
+

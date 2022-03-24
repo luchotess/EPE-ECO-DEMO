@@ -1,0 +1,10 @@
+<section class="bg-gray banners-section text-center">
+  <h2 class="section-title ls-n-10 text-center pt-2 m-b-4">Cursos para Embarazadas</h2>
+  <div class="container py-2">
+    <div class="row">
+      <div class="owl-carousel owl-theme nav-image-center show-nav-hover nav-outer cursos-slider">
+        <app-course-card *ngFor="let course of pregnantCourses" [product]="course"></app-course-card>
+      </div>
+    </div>
+  </div>
+</section>

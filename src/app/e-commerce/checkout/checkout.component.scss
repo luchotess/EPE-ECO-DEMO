@@ -1,0 +1,110 @@
+.terms {
+  cursor: pointer;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.checkout-progress-bar {
+  li {
+    cursor: pointer;
+  }
+}
+
+.user-addresses {
+  display: flex;
+}
+
+.address-container {
+  width: 300px;
+  padding: 15px;
+  margin: 20px;
+  border: 1px solid #12ABB5;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  .check {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #12ABB5;
+    color: white;
+    display: none;
+  }
+
+  .edit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    color: lightgray;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  .delete {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    padding: 10px;
+    color: lightgray;
+
+    &:hover {
+      color: #d66464;
+    }
+  }
+
+  &.new-address {
+    border-style: dashed;
+  }
+
+  &.selected {
+    background-color: #fafafa;
+
+    .check {
+      display: block;
+    }
+  }
+
+  &.disabled {
+    border-color: lightgray;
+    background-color: #fafafa;
+    cursor: default;
+
+    h5 {
+      color: lightgray;
+    }
+  }
+
+  &:hover {
+    background-color: #fafafa;
+  }
+
+  h5 {
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+}
+
+.hover-trigger:hover .hover-info {
+  display: block;
+}
+
+.hover-info {
+  position: absolute;
+  background-color: white;
+  bottom: -42px;
+  color: black;
+  left: 0;
+  transform: translateX(-19%);
+  padding: 10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 22px 70px 4px rgba(0,0,0,0.16), 0 0 0 1px rgba(0, 0, 0, 0.0);
+  width: 400px;
+  display: none;
+}

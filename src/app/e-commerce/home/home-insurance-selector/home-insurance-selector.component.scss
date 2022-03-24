@@ -1,0 +1,14 @@
+.insurance-img {
+  margin: auto;
+  transition: all .3s;
+}
+
+.insurance {
+  cursor: pointer;
+
+  &:hover{
+    .insurance-img{
+      transform: scale(1.25);
+    }
+  }
+}

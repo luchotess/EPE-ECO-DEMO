@@ -1,0 +1,10 @@
+<div class="toolbox-item toolbox-show">
+  <label>Mostrar:</label>
+  <div class="select-custom">
+    <select name="count" class="form-control"
+            [(ngModel)]="viewOptionsValues.qtyOptionValue"
+            (change)="onValuesChanged()">
+      <option [value]="option" *ngFor="let option of viewOptions.qtyOptions">{{ option }}</option>
+    </select>
+  </div>
+</div>

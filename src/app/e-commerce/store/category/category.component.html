@@ -1,0 +1,60 @@
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav mb-md-4">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a routerLink="/{{storeUrl}}">{{storeUrl}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{categoryUrl}}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="container mb-3">
+    <div class="row row-sparse">
+      <div class="col-lg-9 main-content">
+
+        <app-store-category-banner
+                *ngIf="showBanner"
+                [categoryUrl]="categoryUrl">
+        </app-store-category-banner>
+
+        <app-store-category-view-options
+                [viewOptionsValues]="viewOptionsValues"
+                (valuesChanged)="getPaginatorSettings()">
+        </app-store-category-view-options>
+
+        <div class="row" *ngIf="viewOptionsValues.viewModeValue == 'grid'">
+          <div class="col-6 col-sm-4 col-md-3 col-xl-5col" *ngFor="let product of getFilteredProducts()">
+            <app-product-card [product]="product"></app-product-card>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="viewOptionsValues.viewModeValue == 'list'">
+          <div class="col-6 product-default left-details product-list mb-4" *ngFor="let product of products">
+            <app-product-list-card [product]="product"></app-product-list-card>
+          </div>
+        </div>
+
+        <nav class="toolbox toolbox-pagination">
+          <app-store-category-view-options-qty
+                  [viewOptions]="viewOptions"
+                  [viewOptionsValues]="viewOptionsValues"
+                  (change)="getPaginatorSettings()">
+          </app-store-category-view-options-qty>
+
+          <app-store-category-paginator [paginatorSettings]="paginatorSettings"></app-store-category-paginator>
+        </nav>
+
+      </div>
+
+      <div class="sidebar-overlay"></div>
+      <div class="sidebar-toggle"><i class="fas fa-sliders-h"></i></div>
+      <aside class="sidebar-shop col-lg-3 order-lg-first mobile-sidebar">
+        <app-store-category-sidebar [categories]="categories"
+                                    [categoriesServices]="categoriesServices"
+                                    [storeUrl]="storeUrl">
+        </app-store-category-sidebar>
+      </aside>
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+</main><!-- End .main -->

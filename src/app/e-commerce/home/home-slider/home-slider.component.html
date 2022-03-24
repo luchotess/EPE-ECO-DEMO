@@ -1,0 +1,14 @@
+<div class="home-slider owl-carousel owl-theme show-nav-hover nav-big">
+
+  <div class="home-slide home-slide2 banner loaded" *ngFor="let slide of sliderData">
+    <img class="slide-bg" data-src="{{ slide.image }}"
+         alt="home banner">
+    <div class="banner-layer banner-layer-middle">
+      <h2 class="{{ slide.color }}">{{ slide.title }}</h2>
+      <h3>{{ slide.subtitle }}</h3>
+      <h4 class="m-b-4">{{ slide.text }}</h4>
+      <a routerLink="{{ slide.ctaLink }}" class="btn btn-dark btn-xl" role="button">{{ slide.ctaText }}</a>
+    </div>
+  </div>
+
+</div><!-- End .home-slider -->

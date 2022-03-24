@@ -1,0 +1,17 @@
+.page-item.active {
+  border: 2px solid lightgray;
+
+  &:hover {
+    background-color: lightgray;
+    color: white;
+  }
+}
+
+.page-link-btn {
+  border: 1px solid lightgray;
+
+  &:hover {
+    background-color: lightgray;
+    color: inherit !important;
+  }
+}

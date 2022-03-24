@@ -1,0 +1,11 @@
+<ul class="checkout-progress-bar">
+  <li routerLink="/cart">
+    <span>Carrito</span>
+  </li>
+  <li routerLink="/checkout">
+    <span>Datos de Envío</span>
+  </li>
+  <li routerLink="/checkout/payment" class="active" [class.payed]="payed">
+    <span>{{ payed ? 'Compra Realizada' : 'Resumen y Pago'}}</span>
+  </li>
+</ul>

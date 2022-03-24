@@ -1,0 +1,49 @@
+<h2 class="text-primary">Mis Órdenes</h2>
+<div class="mb-4"></div><!-- margin -->
+
+<div class="row row-sparse">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        Órdenes
+      </div><!-- End .card-header -->
+
+      <div class="card-body">
+        <table class="order-table" *ngIf="orders.length > 0; else noData">
+          <tr>
+            <th>
+              Código de Referencia
+            </th>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Productos
+            </th>
+            <th>
+              Medio de Pago
+            </th>
+            <th>
+              Total
+            </th>
+            <th>
+              Estado
+            </th>
+          </tr>
+          <tr *ngFor="let order of orders">
+            <td><b>{{order.referenceCode.toUpperCase()}}</b></td>
+            <td>{{order.datePlaced | date:'medium'}}</td>
+            <td>{{order.cart.length}} Productos <br><b class="pointer hover-u" (click)="openModalDetail(order.cart)">Ver Detalle</b></td>
+            <td>{{order.paymentMethod}}</td>
+            <td>{{order.totalString}}</td>
+            <td><span class="alert alert-success">{{order.status ? order.status : 'Orden Recibida'}}</span></td>
+          </tr>
+        </table>
+
+        <ng-template #noData>
+          <h6 class="text-black-50">No tienes órdenes registradas aún con nosotros.</h6>
+        </ng-template>
+      </div><!-- End .card-body -->
+    </div><!-- End .card -->
+  </div><!-- End .col-md-6 -->
+</div><!-- End .row -->

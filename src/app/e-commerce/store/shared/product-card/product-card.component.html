@@ -1,0 +1,44 @@
+<div class="product-default inner-quickview inner-icon">
+  <figure>
+    <a routerLink="{{storeUrl}}/{{getCategoryUrl(product.categories ? product.categories : product.categoriesArray)}}/{{product.url}}">
+      <img class="main owl-lazy" src="/assets/images/lazy.png"
+           data-src="{{product.images.images[0] ? product.images.images[0].url : 'https://www.careandshare-ut.org/wp-content/uploads/2020/09/image-coming-soon.jpg'}}" [alt]="product.images.images[0] ? product.images.images[0].title : ''">
+    </a>
+    <div class="label-group" *ngIf="product.labels">
+      <span class="product-label" [style.backgroundColor]="label.color" *ngFor="let label of product.labels">{{label.title}}</span>
+    </div>
+    <div class="btn-icon-group" *ngIf="!product.booking">
+      <button (click)="addToCart(product)" class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-shopping-cart mr-2"></i>Comprar</button>
+    </div>
+  </figure>
+  <div class="product-details">
+    <div class="category-wrap">
+      <div class="category-list">
+        <a routerLink="/{{storeUrl}}/{{product.categories ? product.categories.slice(-1)[0] : product.categoriesArray.slice(-1)[0].url}}" class="product-category">
+          {{product.categories ? product.categories.slice(-1)[0] : product.categoriesArray.slice(-1)[0].title}}
+        </a>
+      </div>
+    </div>
+    <h3 class="product-title">
+      <a routerLink="/{{storeUrl}}/{{getCategoryUrl(product.categories ? product.categories : product.categoriesArray)}}/{{product.url}}">
+        {{product.title}}
+      </a>
+    </h3>
+    <div class="ratings-container" *ngIf="isRatingsReady">
+      <div class="product-ratings">
+        <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+        <span class="tooltiptext tooltip-top"></span>
+      </div><!-- End .product-ratings -->
+    </div><!-- End .product-container -->
+    <div class="price-box">
+      <span class="old-price" *ngIf="product.price.old">Regular: <span class="strikethrough">{{product.price.old | currency:'S/ '}}</span></span>
+      <span class="d-block mt-1 product-price text-muted"
+            [class.text-muted]="product.price.offer">
+                    {{product.price.actual | currency:'S/ '}}
+                  </span>
+     <span class="d-block product-price color-price" *ngIf="product.price.single">Mamá: <b>{{product.price.single | currency:'S/ '}}</b></span>
+     <span class="d-block product-price color-price" *ngIf="product.price.singlePather">Un Padre: <b>{{product.price.singlePather | currency:'S/ '}}</b></span>
+      <span class="d-block product-price color-price mt-1" *ngIf="product.price.offer">En Pareja: <b>{{product.price.offer | currency:'S/ '}}</b></span>
+    </div><!-- End .price-box -->
+  </div><!-- End .product-details -->
+</div>

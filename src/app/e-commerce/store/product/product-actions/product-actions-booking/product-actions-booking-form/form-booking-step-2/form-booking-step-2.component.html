@@ -1,0 +1,38 @@
+<button class="btn btn-info btn-back mb-2" type="button" (click)="goToStep(1)">
+  <i class="fas fa-chevron-left"></i>
+  Volver
+</button>
+<h4>Paso 2 de 3.</h4>
+
+
+<h5>Selecciona la sede de tu preferencia:</h5>
+<p *ngIf="!product.schedule.days">(*) Se definirá el horario con el cliente previa coordinación.</p>
+<select class="form-control" name=""
+        [(ngModel)]="bookingData.courseQuestionsData['Sede']">
+  <option disabled value="Lince">Lince (No disponible)</option>
+  <option disabled value="Miraflores">Miraflores (No disponible)</option>
+  <option value="Online">Online</option>
+</select>
+
+<h5 *ngIf="product.schedule.days">Selecciona el horario:</h5>
+<form class="form-inline mb-2">
+  <div class="form-group">
+    <select *ngIf="product.schedule.days" class="form-control" name="hour"
+            [(ngModel)]="bookingData.courseQuestionsData['Dias']">
+      <option *ngFor="let days of product.schedule.days" value="{{days}}">{{days}}</option>
+    </select>
+    <select *ngIf="product.schedule.hours" class="form-control" name="day"
+            [(ngModel)]="bookingData.courseQuestionsData['Hora']">
+      <option *ngFor="let hour of product.schedule.hours" value="{{hour}}">{{hour}}</option>
+    </select>
+  </div>
+</form>
+
+<button class="btn btn-block btn-primary mb-2" (click)="registerAttempt()" [disabled]="fetching || invalid">
+  <span class="spinner-border" role="status" aria-hidden="true" *ngIf="fetching"></span>
+  Inscribirse
+</button>
+
+<div class="d-flex justify-content-between align-items-center">
+  <button class="btn btn-info" (click)="goToStep('gift')">Deseo regalar este servicio</button>
+</div>

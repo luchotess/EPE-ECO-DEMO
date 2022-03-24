@@ -1,0 +1,122 @@
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/"><i class="icon-home"></i></a></li>
+        <li class="breadcrumb-item"><a href="#">Checkout</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Resumen y Pago</li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <div class="container">
+
+    <app-payment-step [payed]="payed"></app-payment-step>
+    <div class="row justify-content-center">
+      <div class="{{ payed ? 'col-lg-8' : 'col-lg-4' }}">
+        <div class="text-center" *ngIf="payed">
+          <h1 class="mb-2">¡Gracias por tu compra!</h1>
+          <p>Referencia: <b class="text-uppercase">{{referenceCode}}</b></p>
+          <p>Un correo con información y resumen de tu compra ha sido enviado a <b>{{localShippingAddress.email}}</b></p>
+
+          <div *ngIf="payed && _AuthService.isAuthenticated()">
+            <button class="btn btn-primary mb-2" routerLink="/account/profile/orders">Ver mis órdenes</button>
+          </div>
+
+        </div>
+        <div class="order-summary">
+          <h3>{{ payed ? 'Resumen de Compra' : 'Resumen' }}</h3>
+
+          <h4>
+            <a data-toggle="collapse" href="#order-cart-section" class="collapsed" role="button" aria-expanded="false" aria-controls="order-cart-section">{{totalProducts}} {{ payed ? 'productos comprados' : 'productos en carrito' }}</a>
+          </h4>
+
+          <div class="collapse show" id="order-cart-section">
+            <app-payment-list [localProducts]="localProducts"></app-payment-list>
+
+            <app-payment-cost [totalPrice]="totalPrice"
+                              [totalDiscount]="totalDiscount"
+                              [getShippingCost]="getShippingCost"
+                              [payed]="payed"
+                              [buying]="buying"
+                              [referenceCode]="referenceCode"
+                              [paymentMethod]="paymentMethod"
+                              [taxes]="taxes"
+                              [localShippingAddress]="localShippingAddress"></app-payment-cost>
+          </div><!-- End #order-cart-section -->
+        </div><!-- End .order-summary -->
+
+        <div class="checkout-info-box">
+          <h3 class="step-title">Envío a:
+            <a routerLink="/checkout" title="Edit" class="step-title-edit" *ngIf="!payed"><span class="sr-only">Editar</span><i class="icon-pencil"></i></a>
+          </h3>
+
+          <address>
+            {{localShippingAddress.name}} {{localShippingAddress.lastname}} <br>
+            {{localShippingAddress.email}} <br>
+            {{localShippingAddress.address}} <br>
+            {{localShippingAddress.department}}, {{localShippingAddress.district}}<br>
+            {{localShippingAddress.country}} <br>
+            {{localShippingAddress.phone}}
+          </address>
+        </div><!-- End .checkout-info-box -->
+
+<!--        <div class="checkout-info-box">-->
+<!--          <h3 class="step-title">Forma de envío:-->
+<!--            <a routerLink="/checkout" title="Edit" class="step-title-edit" *ngIf="!payed"><span class="sr-only">Edit</span><i class="icon-pencil"></i></a>-->
+<!--          </h3>-->
+<!--          <p>{{localShippingAddress.shippingMethod}}</p>-->
+<!--        </div>&lt;!&ndash; End .checkout-info-box &ndash;&gt;-->
+      </div><!-- End .col-lg-4 -->
+
+      <div class="col-lg-8 order-lg-first padding-right-lg" *ngIf="!payed">
+        <div class="checkout-payment">
+          <h2 class="step-title">Forma de Pago:</h2>
+
+          <div class="form-group no-max-width">
+            <label>Forma de Pago</label>
+            <p>Si seleccionas transferencia interbancaria, Yape, Plin o contra-entrega te enviaremos un correo con la información para el pago.</p>
+            <div class="payment-methods-list">
+              <div class="payment-method disabled" *ngFor="let paymentMethodItem of paymentMethods"
+                   [class.active]="paymentMethod===paymentMethodItem.code"
+                   [class.disabled]="paymentMethodItem.disabled"
+                   (click)="setPaymentType(paymentMethodItem.code)">
+                <img [src]="paymentMethodItem.icon">
+                <h5>{{paymentMethodItem.name}}</h5>
+                <span class="help-message" *ngIf="paymentMethodItem.disabled">Lo sentimos. En este momento, el pago con tarjeta de crédito o debito de manera online está deshabilitado temporalmente.</span>
+              </div>
+            </div>
+          </div><!-- End .form-group -->
+
+          <div class="form-group-custom-control" *ngIf="false">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="change-bill-address" value="1">
+              <label class="custom-control-label" for="change-bill-address">Mi dirección de envío es igual a facturación</label>
+            </div><!-- End .custom-checkbox -->
+          </div><!-- End .form-group -->
+
+          <div id="checkout-shipping-address" *ngIf="false">
+            <address>
+              Desmond Mason <br>
+              123 Street Name, City, USA <br>
+              Los Angeles, California 03100 <br>
+              United States <br>
+              (123) 456-7890
+            </address>
+          </div><!-- End #checkout-shipping-address -->
+
+          <div id="new-checkout-address" class="show" *ngIf="false">
+            <app-payment-form-date-shipping></app-payment-form-date-shipping>
+          </div><!-- End #new-checkout-address -->
+        </div><!-- End .checkout-payment -->
+
+        <app-payment-coupon></app-payment-coupon>
+      </div><!-- End .col-lg-8 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-6"></div><!-- margin -->
+</main><!-- End .main -->
+
+<app-card *ngIf="isCardPopupBeingShow" (onClose)="isCardPopupBeingShow = false"></app-card>
+

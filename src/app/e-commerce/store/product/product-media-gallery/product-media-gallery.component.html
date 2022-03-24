@@ -1,0 +1,22 @@
+<div class="product-slider-container">
+  <div class="product-single-carousel owl-carousel owl-theme">
+    <div class="product-item" *ngFor="let image of product.images.images">
+      <div *ngIf="product.availableToSell === false" class="over-suspendido">
+        <span class="suspendido">
+          Suspendido
+        </span>
+      </div>
+      <img class="product-single-image owl-lazy" [class.zoom]="!product.booking"
+           src="assets/images/lazy.png" data-src="{{image.url}}"
+      />
+    </div>
+  </div>
+  <span class="prod-full-screen">
+    <i class="icon-plus"></i>
+  </span>
+</div>
+<div class="prod-thumbnail owl-dots" id='carousel-custom-dots'>
+  <div class="owl-dot" *ngFor="let image of product.images.images">
+    <img class="thumbnail owl-lazy" src="assets/images/lazy.png" data-src="{{image.url}}"/>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+.alingcenter {
+  align-self: center;
+}
+
+.title-team {
+  margin: 100px 0 50px;
+  text-align: center;
+  font-size: 45px;
+}
+
+.cont-video {
+  max-width: 960px;
+  margin: 0 auto 50px;
+}
+
+video {
+  width: 100%;
+  height: 360px;
+  margin: auto;
+  display: block;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+.history-section .row{
+  display: flex;
+  justify-content: center;
+}
+
+.member {
+  width: 20%;
+  min-width: 200px;
+  img {
+    margin: 0 0 17px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .member-1 {
+    justify-content: center;
+    display: flex;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #f4b08d;
+    margin: 0px 20px !important;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    font-weight: lighter;
+    font-style: italic;
+    margin: 0px 20px 40px;
+  }
+}
+
+.misiones {
+  h2 {
+    text-align: center;
+    color: gray;
+  }
+
+  p {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 812px) {
+
+  .member {
+    width: 50%;
+  }
+}

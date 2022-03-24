@@ -1,0 +1,43 @@
+<figure>
+  <a routerLink="{{storeUrl}}/{{getCategoryUrl(product.categories)}}/{{product.url}}">
+    <img class="owl-lazy" src="/assets/images/lazy.png" data-src="{{product.images.images[0].url}}">
+  </a>
+</figure>
+<div class="product-details">
+  <div class="category-list">
+    <a routerLink="/{{storeUrl}}/{{product.categories.slice(-1)[0]}}" class="product-category">
+      {{product.categories.slice(-1)[0]}}
+    </a>
+  </div>
+  <h2 class="product-title">
+    <a routerLink="/{{storeUrl}}/{{getCategoryUrl(product.categories)}}/{{product.url}}">
+      {{product.title}}
+    </a>
+  </h2>
+  <div class="ratings-container">
+    <div class="product-ratings">
+      <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+      <span class="tooltiptext tooltip-top"></span>
+    </div><!-- End .product-ratings -->
+  </div><!-- End .product-container -->
+  <p class="product-description">{{product.description}}</p>
+  <div class="price-box">
+    <span class="old-price">Normal: <span class="strikethrough">{{product.price.old | currency:'S/ '}}</span></span>
+    <span class="d-block mt-1 product-price text-muted"
+          [class.strikethrough]="product.price.offer"
+          [class.text-muted]="product.price.offer">
+                    {{product.price.actual | currency:'S/ '}}
+                  </span>
+    <span class="d-block product-price mt-1"
+          *ngIf="product.price.offer">Oferta: <b>{{product.price.offer | currency:'S/ '}}</b></span>
+  </div><!-- End .price-box -->
+  <div class="product-action">
+    <button *ngIf="product.availableToSell" class="btn-icon btn-add-cart"><i class="icon-shopping-cart"></i>Agregar al
+      Carrito
+    </button>
+    <button *ngIf="product.booking" class="btn-icon btn-add-cart"
+            routerLink="{{storeUrl}}/{{getCategoryUrl(product.categories)}}/{{product.url}}"><i
+      class="icon-calendar"></i>Reservar Cita
+    </button>
+  </div>
+</div><!-- End .product-details -->

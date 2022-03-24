@@ -1,0 +1,61 @@
+
+<main class="main">
+  <nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/account">Cuenta</a></li>
+        <li class="breadcrumb-item active"><a>Registro</a></li>
+      </ol>
+    </div><!-- End .container -->
+  </nav>
+
+  <div class="container">
+    <div class="row row-sparse">
+
+      <form (ngSubmit)="saveRegister()" class="col-md-6">
+        <div class="heading">
+          <h2 class="title">Crear una cuenta</h2>
+          <p>Al crearte una cuenta con nosotros podrás comprar más rapidamente y guardar tus datos para futuras entregas.</p>
+        </div><!-- End .heading -->
+
+        <p *ngIf="alertSuccess" class="text-danger"> * Puede que alguien más ya uso estos datos.</p>
+
+        <div autocomplete="off" class="col-6" [formGroup]="registrationForm">
+          <div class="form-group required-field">
+            <input (change)="user.email = $event.target.value" formControlName="email" [class.is-invalid]="emailNotValid" name="email" type="email" class="form-control" placeholder="Correo Electrónico">
+              <small *ngIf="emailNotValid" class="text-danger">Ingrese su correo</small>
+            <input (change)="user.password = $event.target.value" formControlName="password" [class.is-invalid]="passwordNotValid" name="password" type="password" class="form-control" placeholder="Contraseña">
+              <small *ngIf="passwordNotValid" class="text-danger">Ingrese su contraseña</small>
+            <input name="password2" type="password" formControlName="password2" [class.is-invalid]="password2NotValid" class="form-control" placeholder="Confirmar Contraseña">
+              <small *ngIf="password2NotValid" class="text-danger">Confirme su contraseña</small>
+
+            <input (change)="user.name = $event.target.value" formControlName="name" [class.is-invalid]="nameNotValid" name="name" type="text" class="form-control" placeholder="Nombres">
+              <small *ngIf="nameNotValid" class="text-danger">Ingrese su nombre</small>
+            <input (change)="user.lastname = $event.target.value" formControlName="lastname" [class.is-invalid]="lastnameNotValid" name="lastname" type="text" class="form-control" placeholder="Apellidos" required>
+              <small *ngIf="lastnameNotValid" class="text-danger">Ingrese su apellido</small>
+            <input (change)="user.data.dni = $event.target.value" formControlName="dni" [class.is-invalid]="dniNotValid" name="dni" type="text" class="form-control" placeholder="DNI / CE" required>
+              <small *ngIf="dniNotValid" class="text-danger">Ingrese su DNI/CE</small>
+            <input (change)="user.phone = $event.target.value" formControlName="phone" [class.is-invalid]="phoneNotValid" name="phone" type="tel" class="form-control" placeholder="N° de celular" required>
+              <small *ngIf="dniNotValid" class="text-danger">Ingrese su N° de celular</small>
+          </div>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="newsletter-signup">
+          <label class="custom-control-label" for="newsletter-signup">Suscribirse al boletín de ofertas y promociones</label>
+        </div><!-- End .custom-checkbox -->
+
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="fetching">
+            <span class="spinner-border" role="status" aria-hidden="true" *ngIf="fetching"></span>
+            Crear cuenta
+          </button>
+          <a routerLink="/account/login" class="forget-pass">¿Ya tienes cuenta? Ingresa <u>aquí.</u></a>
+        </div><!-- End .form-footer -->
+      </form><!-- End .col-md-6 -->
+    </div><!-- End .row -->
+  </div><!-- End .container -->
+
+  <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->

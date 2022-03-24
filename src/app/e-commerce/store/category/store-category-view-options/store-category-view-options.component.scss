@@ -1,0 +1,14 @@
+.layout-btn {
+
+  i {
+    padding: 2px;
+  }
+
+  &.active i {
+    background-color: #e7e7e7;
+  }
+}
+
+.toolbox .select-custom .form-control {
+  border-color: lightgray;
+}

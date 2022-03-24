@@ -1,0 +1,24 @@
+<div class="checkout-step-shipping form-grouprequired-field" [formGroup]="shippingAddressForm">
+  <h2 class="step-title">Métodos de Envío</h2>
+
+  <table class="table table-step-shipping" *ngIf="selectedAddress !== null else noShippingAddressSelected">
+    <tbody>
+    <tr *ngFor="let shippingMethod of shippingMethods">
+      <td>
+        <input type="radio" name="shippingMethod"
+               value="{{ shippingMethod.cost }}|{{ shippingMethod.code }}"
+               formControlName="shippingMethod">
+      </td>
+      <td>
+        <strong>{{ shippingMethod.cost === 0 ? '¡Gratis!' : shippingMethod.cost | currency:'S/ ' }}</strong>
+      </td>
+      <td>{{ getShippingLabel(shippingMethod.label) }}</td>
+      <td>{{ shippingMethod.eta }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noShippingAddressSelected>
+    <h5 class="mt-2">Selecciona o agrega una dirección de envío primero.</h5>
+  </ng-template>
+</div><!-- End .checkout-step-shipping -->

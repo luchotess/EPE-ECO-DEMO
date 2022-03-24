@@ -1,0 +1,65 @@
+<table class="table table-mini-cart">
+  <tbody>
+  <tr *ngFor="let product of products | async">
+    <td class="product-col">
+      <figure class="product-image-container">
+        <a routerLink="/tienda/{{product.item.categories}}/{{product.item.url}}" class="product-image">
+          <img src="{{product.item.images.images[0].url}}" alt="product">
+        </a>
+      </figure>
+      <div>
+        <h2 class="product-title mt-0">
+          <a
+                  routerLink="/tienda/{{product.item.categories}}/{{product.item.url}}">{{product.item.title}}</a>
+        </h2>
+
+        <span class="product-qty">Cantidad: {{product.qty}}</span>
+      </div>
+    </td>
+    <td class="price-col">
+      <s>{{product.item.price.old | currency: 'S/'}}</s><br>
+      <strong>{{getTotalPriceByCartProduct(product) | currency: 'S/ '}}</strong>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="table table-totals">
+  <tbody>
+  <tr>
+    <td>Subtotal</td>
+    <td>{{ ((totalPrice | async) + totalDiscount) | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Costo de Envío</td>
+    <td>{{ getShippingCost(shippingAddressForm.controls.shippingMethod.value) | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Descuentos</td>
+    <td>- {{ totalDiscount | currency: 'S/ '}}</td>
+  </tr>
+
+  <tr>
+    <td>Impuestos</td>
+    <td>Incluidos</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>Total</td>
+    <td>{{ (totalPrice | async) + getShippingCost(shippingAddressForm.controls.shippingMethod.value) | currency: 'S/ '}}</td>
+  </tr>
+  <tr>
+    <button type="submit" class="btn btn-primary float-right position-relative hover-trigger"
+            [disabled]="selectedAddress === null || !shippingAddressForm.controls.shippingMethod.value">
+      Ir a Resumen y Pago
+
+      <div class="hover-info" *ngIf="selectedAddress === null">
+        Debes seleccionar una dirección primero.
+      </div>
+    </button>
+  </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,43 @@
+.my-address{
+    display: flex;
+    flex-direction: column;
+
+    .add-address{
+        padding-bottom: 2rem;
+
+        a{
+            color: #12ABB5;
+            font-weight: 800;
+        }
+    }
+    .address-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+
+        .address-list{
+            ul li{
+                line-height: 2rem;
+
+                &:first-child{
+                    font-weight: 800;
+                }
+            }
+
+        }
+        .address-pred{
+            color: #45a00a;
+        }
+        .address-options{
+            padding-right: 4rem;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+    }
+}
+
+

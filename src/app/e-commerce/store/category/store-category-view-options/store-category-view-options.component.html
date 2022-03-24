@@ -1,0 +1,33 @@
+<nav class="toolbox">
+  <div class="toolbox-left">
+    <div class="toolbox-item toolbox-sort">
+      <label>Ordenar por:</label>
+      <div class="select-custom">
+        <select name="orderby" class="form-control" [(ngModel)]="viewOptionsValues.sortOptionValue">
+          <option [value]="option.value" *ngFor="let option of viewOptions.sortOptions"
+                  [selected]="option.selected">
+            {{ option.title }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="toolbox-right">
+    <app-store-category-view-options-qty
+            [viewOptions]="viewOptions"
+            [viewOptionsValues]="viewOptionsValues"
+            (change)="onValuesChange()"
+    ></app-store-category-view-options-qty>
+
+    <div class="toolbox-item layout-modes">
+      <a class="layout-btn btn-{{ option }}"
+         *ngFor="let option of viewOptions.viewModeOptions"
+         [class.active]="viewOptionsValues.viewModeValue === option"
+         [title]="option"
+         (click)="setViewMode(option)">
+        <i class="icon-mode-{{ option }}"></i>
+      </a>
+    </div>
+  </div>
+</nav>

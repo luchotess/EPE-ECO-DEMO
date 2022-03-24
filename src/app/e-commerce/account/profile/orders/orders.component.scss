@@ -1,0 +1,13 @@
+.order-table {
+  width: 100%;
+
+  td, th {
+    border: 1px solid lightgray;
+    padding: 5px;
+
+    .alert {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+}
